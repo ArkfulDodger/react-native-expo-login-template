@@ -3,6 +3,7 @@ import * as utils from "./src/utils/utils";
 import { useEffect, useState, useCallback } from "react";
 import { View, StatusBar, Platform } from "react-native";
 import * as SplashScreen from "expo-splash-screen";
+import useConfigureApp from "./src/hooks/useConfigureApp";
 import useFonts from "./src/hooks/useFonts";
 import BackgroundGradientContainer from "./src/containers/BackgroundGradientContainer";
 import LoadingScreen from "./src/screens/LoadingScreen";
@@ -14,31 +15,30 @@ export default function App() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    const prepare = async () => {
-      try {
-        // do platform configuration
-        utils.configurePlatformSpecificSettings();
+    useConfigureApp()
+      .then(() => setIsLoaded(true))
+      .catch(() => console.warn("configuration failure"));
+    // useConfigureApp()
+    //   .then(() => setIsLoaded(true))
+    //   .catch(console.log("configuration failure"));
 
-        // load fonts
-        await useFonts();
-
-        // TODO: remove below
-        // artificial 2 second delay after loading
-        await new Promise((resolve) => setTimeout(resolve, 2000));
-      } catch (e) {
-        console.warn(e);
-      } finally {
-        setIsLoaded(true);
-      }
-    };
-
-    prepare();
+    // const prepare = async () => {
+    //   try {
+    //     utils.configurePlatformSpecificSettings();
+    //     await useFonts();
+    //     await new Promise((resolve) => setTimeout(resolve, 2000));
+    //   } catch (e) {
+    //     console.warn(e);
+    //   } finally {
+    //     setIsLoaded(true);
+    //   }
+    // };
+    // prepare();
   }, []);
 
+  // remove splash screen once main app has rendered
   const onLayoutRootView = useCallback(async () => {
-    if (isLoaded) {
-      await SplashScreen.hideAsync();
-    }
+    isLoaded && (await SplashScreen.hideAsync());
   }, [isLoaded]);
 
   // render only splash screen if app not loaded
