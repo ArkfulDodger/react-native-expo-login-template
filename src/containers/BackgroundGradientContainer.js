@@ -5,7 +5,7 @@ import { LinearGradient } from "expo-linear-gradient";
 
 const BackgroundGradientContainer = (props) => {
   return (
-    <View style={styles.fillContainer}>
+    <View {...props} style={styles.fillContainer}>
       <LinearGradient
         colors={colors.backgroundGradient}
         style={styles.fillContainer}

@@ -47,12 +47,8 @@ export default function App() {
   }
 
   return (
-    <BackgroundGradientContainer>
-      {isLoaded && (
-        <View style={{ flex: 1 }} onLayout={onLayoutRootView}>
-          <LoadingScreen />
-        </View>
-      )}
+    <BackgroundGradientContainer onLayout={onLayoutRootView}>
+      <LoadingScreen />
     </BackgroundGradientContainer>
   );
 }
