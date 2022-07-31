@@ -1,20 +1,18 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { styles } from "./src/theme/styles";
+import * as Utils from "./src/utils/Utils";
+import { View, StatusBar, Platform } from "react-native";
+import BackgroundGradientContainer from "./src/containers/BackgroundGradientContainer";
+import LoadingScreen from "./src/screens/LoadingScreen";
+
+// TODO: explore possibly utilizing Status Bar from "expo-status-bar"
+
+// do platform configuration
+Utils.configurePlatformSpecificSettings();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <BackgroundGradientContainer>
+      <LoadingScreen />
+    </BackgroundGradientContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
