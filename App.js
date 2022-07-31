@@ -2,13 +2,10 @@ import { styles } from "./src/theme/styles";
 import * as utils from "./src/utils/utils";
 import { useEffect, useState, useCallback } from "react";
 import { View, StatusBar, Platform } from "react-native";
-// import AppLoading from "expo-app-loading";
 import * as SplashScreen from "expo-splash-screen";
 import useFonts from "./src/hooks/useFonts";
 import BackgroundGradientContainer from "./src/containers/BackgroundGradientContainer";
 import LoadingScreen from "./src/screens/LoadingScreen";
-
-// TODO: explore possibly utilizing Status Bar from "expo-status-bar"
 
 // keep splash screen visible until prompted
 SplashScreen.preventAutoHideAsync();
