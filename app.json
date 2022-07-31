@@ -7,9 +7,9 @@
         "icon": "./src/assets/images/icon.png",
         "userInterfaceStyle": "light",
         "splash": {
-            "image": "./src/assets/images/splash.png",
+            "image": "./src/assets/images/worderby-title.png",
             "resizeMode": "contain",
-            "backgroundColor": "#ffffff"
+            "backgroundColor": "#FFF0E6"
         },
         "updates": {
             "fallbackToCacheTimeout": 0

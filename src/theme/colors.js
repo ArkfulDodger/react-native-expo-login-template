@@ -1,6 +1,7 @@
 const lightTheme = {
   backgroundGradientTop: "#FFFFFF",
   backroundGradientBottom: "#FFE2CD",
+  splashBackground: "#FFF0E6",
 };
 
 const lightThemeGradients = {
