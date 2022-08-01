@@ -2,66 +2,68 @@ import { styles } from "./src/theme/styles";
 import { useEffect, useState, useCallback } from "react";
 import { View, Image, Text } from "react-native";
 import * as SplashScreen from "expo-splash-screen";
+// import useGoogleAuth from "./src/hooks/useGoogleAuth";
 import useConfigureApp from "./src/hooks/useConfigureApp";
 import BackgroundGradientContainer from "./src/containers/BackgroundGradientContainer";
 import LoadingScreen from "./src/screens/LoadingScreen";
 import LoginScreen from "./src/screens/LoginScreen";
-import * as Google from "expo-auth-session/providers/google";
-import * as WebBrowser from "expo-web-browser";
+// import * as Google from "expo-auth-session/providers/google";
+// import * as WebBrowser from "expo-web-browser";
 
 // TODO: update splash screen to be customized/animated
 
 // allows auth session to complete and return results
-WebBrowser.maybeCompleteAuthSession();
+// WebBrowser.maybeCompleteAuthSession();
 
 // keep splash screen visible until prompted
 SplashScreen.preventAutoHideAsync();
 
 export default function App() {
   const [isLoaded, setIsLoaded] = useState(false);
-  const [accessToken, setAccessToken] = useState();
-  const [userInfo, setUserInfo] = useState();
 
-  const [resquest, response, promptAsync] = Google.useAuthRequest({
-    expoClientId:
-      "962076365408-s3tomb4rc4nchdlcjljgj5mr1pv757u0.apps.googleusercontent.com",
-    androidClientId:
-      "962076365408-dnc65jt4ldvkth9tpei9sk4s6mc6obt1.apps.googleusercontent.com",
-    iosClientId:
-      "962076365408-60uatlibh9pbk7as31torfnigq7p8m0u.apps.googleusercontent.com",
-  });
+  // const [accessToken, setAccessToken] = useState();
+  // const [userInfo, setUserInfo] = useState();
 
-  // set access Token from successful GoogleAuthRequest
-  useEffect(() => {
-    if (response?.type === "success") {
-      setAccessToken(response.authentication.accessToken);
-    }
-  }, [response]);
+  // const [resquest, response, promptAsync] = Google.useAuthRequest({
+  //   expoClientId:
+  //     "962076365408-s3tomb4rc4nchdlcjljgj5mr1pv757u0.apps.googleusercontent.com",
+  //   androidClientId:
+  //     "962076365408-dnc65jt4ldvkth9tpei9sk4s6mc6obt1.apps.googleusercontent.com",
+  //   iosClientId:
+  //     "962076365408-60uatlibh9pbk7as31torfnigq7p8m0u.apps.googleusercontent.com",
+  // });
 
-  const getUserData = async () => {
-    let userInfoResponse = await fetch(
-      "https://www.googleapis.com/userinfo/v2/me",
-      {
-        headers: { Authorization: `Bearer ${accessToken}` },
-      }
-    );
+  // // set access Token from successful GoogleAuthRequest
+  // useEffect(() => {
+  //   if (response?.type === "success") {
+  //     setAccessToken(response.authentication.accessToken);
+  //   }
+  // }, [response]);
 
-    userInfoResponse.json().then((data) => {
-      setUserInfo(data);
-    });
-  };
+  // const getUserData = async () => {
+  //   let userInfoResponse = await fetch(
+  //     "https://www.googleapis.com/userinfo/v2/me",
+  //     {
+  //       headers: { Authorization: `Bearer ${accessToken}` },
+  //     }
+  //   );
 
-  const showUserInfo = () => {
-    if (userInfo) {
-      return (
-        <View style={styles.centered}>
-          <Image source={{ uri: userInfo.picture }} style={styles.profilePic} />
-          <Text>Welcome {userInfo.name}!</Text>
-          <Text>{userInfo.email}!</Text>
-        </View>
-      );
-    }
-  };
+  //   userInfoResponse.json().then((data) => {
+  //     setUserInfo(data);
+  //   });
+  // };
+
+  // const showUserInfo = () => {
+  //   if (userInfo) {
+  //     return (
+  //       <View style={styles.centered}>
+  //         <Image source={{ uri: userInfo.picture }} style={styles.profilePic} />
+  //         <Text>Welcome {userInfo.name}!</Text>
+  //         <Text>{userInfo.email}!</Text>
+  //       </View>
+  //     );
+  //   }
+  // };
 
   // configure app on startup
   useEffect(() => {
@@ -84,10 +86,10 @@ export default function App() {
   return (
     <BackgroundGradientContainer onLayout={onLayoutRootView}>
       <LoginScreen
-        accessToken={accessToken}
-        getUserData={getUserData}
-        promptAsync={promptAsync}
-        showUserInfo={showUserInfo}
+      // accessToken={accessToken}
+      // getUserData={getUserData}
+      // promptAsync={promptAsync}
+      // showUserInfo={showUserInfo}
       />
     </BackgroundGradientContainer>
   );
