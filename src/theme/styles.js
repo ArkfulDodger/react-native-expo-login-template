@@ -11,4 +11,10 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+
+  // profile pic size for demo purposes
+  profilePic: {
+    width: 50,
+    height: 50,
+  },
 });

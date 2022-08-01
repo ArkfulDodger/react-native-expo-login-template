@@ -16,13 +16,15 @@
         },
         "assetBundlePatterns": ["**/*"],
         "ios": {
-            "supportsTablet": true
+            "supportsTablet": true,
+            "bundleIdentifier": "com.arkfuldodger.worderby"
         },
         "android": {
             "adaptiveIcon": {
                 "foregroundImage": "./src/assets/images/adaptive-icon.png",
                 "backgroundColor": "#FFFFFF"
-            }
+            },
+            "package": "com.arkfuldodger.worderby"
         },
         "androidStatusBar": {
             "translucent": true,
