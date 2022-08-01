@@ -4,6 +4,8 @@ import useConfigureApp from "./src/hooks/useConfigureApp";
 import BackgroundGradientContainer from "./src/containers/BackgroundGradientContainer";
 import LoadingScreen from "./src/screens/LoadingScreen";
 
+// TODO: update splash screen to be customized/animated
+
 // keep splash screen visible until prompted
 SplashScreen.preventAutoHideAsync();
 
