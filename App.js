@@ -3,6 +3,8 @@ import * as SplashScreen from "expo-splash-screen";
 import useConfigureApp from "./src/hooks/useConfigureApp";
 import BackgroundGradientContainer from "./src/containers/BackgroundGradientContainer";
 import LoginScreen from "./src/screens/LoginScreen";
+import { Provider as PaperProvider } from "react-native-paper";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 
 // TODO: update splash screen to be customized/animated
 
@@ -31,8 +33,14 @@ export default function App() {
 
   // render app within universal background container
   return (
-    <BackgroundGradientContainer onLayout={onLayoutRootView}>
-      <LoginScreen />
-    </BackgroundGradientContainer>
+    <PaperProvider>
+      <SafeAreaProvider>
+        <BackgroundGradientContainer onLayout={onLayoutRootView}>
+          <SafeAreaView style={{ flex: 1 }}>
+            <LoginScreen />
+          </SafeAreaView>
+        </BackgroundGradientContainer>
+      </SafeAreaProvider>
+    </PaperProvider>
   );
 }

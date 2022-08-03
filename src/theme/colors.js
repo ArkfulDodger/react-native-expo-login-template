@@ -1,7 +1,8 @@
 const lightTheme = {
   backgroundGradientTop: "#FFFFFF",
   backroundGradientBottom: "#FFE2CD",
-  splashBackground: "#FFF0E6",
+  splashBackground: "#FFF0E6", // midway btw gradient top/bottom
+  inputBackground: "#fff6f2", // slightly lighter than midway
 };
 
 const lightThemeGradients = {
