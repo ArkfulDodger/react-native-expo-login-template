@@ -6,6 +6,8 @@ import LoginScreen from "./src/screens/LoginScreen";
 
 // TODO: update splash screen to be customized/animated
 
+// Test change
+
 // keep splash screen visible until prompted
 SplashScreen.preventAutoHideAsync();
 
