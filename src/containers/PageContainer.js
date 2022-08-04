@@ -1,5 +1,5 @@
-import { styles } from "../theme/styles";
 import { View } from "react-native";
+import { styles } from "../theme/styles";
 
 const PageContainer = (props) => {
   return (

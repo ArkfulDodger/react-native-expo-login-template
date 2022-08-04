@@ -1,5 +1,5 @@
-import { styles } from "../../theme/styles";
 import { Image } from "react-native";
+import { styles } from "../../theme/styles";
 
 const TitleImage = (props) => {
   return (

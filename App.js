@@ -1,10 +1,15 @@
+// REACT/EXPO -------------------------------------------------------
 import { useEffect, useState, useCallback } from "react";
 import * as SplashScreen from "expo-splash-screen";
-import useConfigureApp from "./src/hooks/useConfigureApp";
-import BackgroundGradientContainer from "./src/containers/BackgroundGradientContainer";
-import LoginScreen from "./src/screens/LoginScreen";
+// EXTERNAL ---------------------------------------------------------
 import { Provider as PaperProvider } from "react-native-paper";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+// HOOKS ------------------------------------------------------------
+import useConfigureApp from "./src/hooks/useConfigureApp";
+// CONTAINERS -------------------------------------------------------
+import BackgroundGradientContainer from "./src/containers/BackgroundGradientContainer";
+// COMPONENTS -------------------------------------------------------
+import LoginScreen from "./src/screens/LoginScreen";
 
 // TODO: update splash screen to be customized/animated
 

@@ -1,7 +1,7 @@
-import { styles } from "../theme/styles";
-import { colors } from "../theme/colors";
 import { View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
+import { colors } from "../theme/colors";
+import { styles } from "../theme/styles";
 
 const BackgroundGradientContainer = (props) => {
   return (

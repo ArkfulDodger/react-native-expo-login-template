@@ -1,6 +1,9 @@
-import { styles } from "../theme/styles";
-import fonts from "../theme/fonts";
+// REACT/EXPO -------------------------------------------------------
 import { Text, ActivityIndicator } from "react-native";
+// SYSTEM -----------------------------------------------------------
+import fonts from "../theme/fonts";
+import { styles } from "../theme/styles";
+// CONTAINERS -------------------------------------------------------
 import CenteredContainer from "../containers/CenteredContainer";
 
 // TODO: Should Implement Title component, rather than Text

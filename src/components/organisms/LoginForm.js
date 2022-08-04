@@ -1,7 +1,9 @@
+// REACT/EXPO -------------------------------------------------------
 import React, { useState } from "react";
 import { View } from "react-native";
-import AuthInput from "../atoms/AuthInput";
+// COMPONENTS -------------------------------------------------------
 import AuthButton from "../atoms/AuthButton";
+import AuthInput from "../atoms/AuthInput";
 import SecureInput from "../molecules/SecureInput";
 
 const LoginForm = (props) => {

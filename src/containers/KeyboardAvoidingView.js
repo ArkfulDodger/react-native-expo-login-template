@@ -1,5 +1,5 @@
-import { styles } from "../theme/styles";
 import { KeyboardAvoidingView as KeyboardAvoidingViewNative } from "react-native";
+import { styles } from "../theme/styles";
 
 const KeyboardAvoidingView = (props) => {
   return (

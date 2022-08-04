@@ -1,6 +1,6 @@
-import { styles } from "../../theme/styles";
 import { View } from "react-native";
 import { Text, Avatar } from "react-native-paper";
+import { styles } from "../../theme/styles";
 
 const UserInfoDisplay = ({ userInfo }) => {
   return (

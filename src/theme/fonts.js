@@ -1,5 +1,5 @@
-import metrics from "./metrics";
 import { Platform } from "react-native";
+import metrics from "./metrics";
 
 // require all custom fonts
 const custom = {
