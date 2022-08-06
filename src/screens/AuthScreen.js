@@ -7,6 +7,7 @@ import KeyboardAvoidingView from "../containers/KeyboardAvoidingView";
 import TitleImage from "../components/atoms/TitleImage";
 import LoginPage from "../components/pages/LoginPage";
 import CreateAccountPage from "../components/pages/CreateAccountPage";
+import FinalizeAccountPage from "../components/pages/FinalizeAccountPage";
 
 // allows auth session to complete and return results
 WebBrowser.maybeCompleteAuthSession();
@@ -18,7 +19,8 @@ const AuthScreen = (props) => {
     <KeyboardAvoidingView>
       <TitleImage />
       {/* <LoginPage userInfo={userInfo} setUserInfo={setUserInfo} /> */}
-      <CreateAccountPage userInfo={userInfo} setUserInfo={setUserInfo} />
+      {/* <CreateAccountPage userInfo={userInfo} setUserInfo={setUserInfo} /> */}
+      <FinalizeAccountPage userInfo={userInfo} setUserInfo={setUserInfo} />
     </KeyboardAvoidingView>
   );
 };
