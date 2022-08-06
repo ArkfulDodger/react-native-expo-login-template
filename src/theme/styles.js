@@ -8,14 +8,28 @@ export const styles = StyleSheet.create({
   },
 
   pageMargins: {
-    marginHorizontal: 10,
+    marginHorizontal: 15,
     marginVertical: 10,
   },
 
   spreadColumn: {
     flex: 1,
     flexDirection: "column",
-    justifyContent: "space-around",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+
+  spreadRow: {
+    alignSelf: "stretch",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+
+  centeredRow: {
+    alignSelf: "center",
+    flexDirection: "row",
+    justifyContent: "space-between",
     alignItems: "center",
   },
 
@@ -45,5 +59,11 @@ export const styles = StyleSheet.create({
   // auth page buttons
   authButton: {
     alignSelf: "stretch",
+  },
+
+  // remove padding and margins
+  noPaddingNoMargin: {
+    padding: 0,
+    margin: 0,
   },
 });

@@ -9,7 +9,7 @@ import useConfigureApp from "./src/hooks/useConfigureApp";
 // CONTAINERS -------------------------------------------------------
 import BackgroundGradientContainer from "./src/containers/BackgroundGradientContainer";
 // COMPONENTS -------------------------------------------------------
-import LoginScreen from "./src/screens/LoginScreen";
+import AuthScreen from "./src/screens/AuthScreen";
 
 // TODO: update splash screen to be customized/animated
 
@@ -44,7 +44,7 @@ export default function App() {
       <SafeAreaProvider>
         <BackgroundGradientContainer onLayout={onLayoutRootView}>
           <SafeAreaView style={{ flex: 1 }}>
-            <LoginScreen />
+            <AuthScreen />
           </SafeAreaView>
         </BackgroundGradientContainer>
       </SafeAreaProvider>

@@ -7,29 +7,22 @@ import { styles } from "../../theme/styles";
 // CONTAINERS -------------------------------------------------------
 import PageContainer from "../../containers/PageContainer";
 // COMPONENTS -------------------------------------------------------
-import FacebookLoginButton from "../molecules/FacebookLoginButton";
-import GoogleLoginButton from "../molecules/GoogleLoginButton";
+import CreateAccountForm from "../organisms/CreateAccountForm";
 import HorizontalLine from "../atoms/HorizontalLine";
-import LoginForm from "../organisms/LoginForm";
-import UserInfoDisplay from "../molecules/UserInfoDisplay";
+import OauthCreateAccountMenu from "../organisms/OauthCreateAccountMenu";
 
-const LoginPage = ({ userInfo, setUserInfo }) => {
+const CreateAccountPage = (props) => {
   return (
     <PageContainer>
       <View style={styles.spreadColumn}>
-        {userInfo && <UserInfoDisplay userInfo={userInfo} />}
-        <Headline>Log In</Headline>
-        <LoginForm />
+        <Headline>Create Account</Headline>
+        <CreateAccountForm />
         <HorizontalLine />
-        <GoogleLoginButton setUserInfo={setUserInfo} text="log in" />
-        <FacebookLoginButton text="log in" />
-        <View>
-          <Button>create account</Button>
-          <Button>forgot password?</Button>
-        </View>
+        <OauthCreateAccountMenu />
+        <Button>return to login</Button>
       </View>
     </PageContainer>
   );
 };
 
-export default LoginPage;
+export default CreateAccountPage;

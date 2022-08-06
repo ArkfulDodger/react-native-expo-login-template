@@ -2,7 +2,7 @@ import { useState } from "react";
 import useGoogleAuth from "../../hooks/useGoogleAuth";
 import AuthButton from "../atoms/AuthButton";
 
-const GoogleAuthButton = ({ setUserInfo }) => {
+const GoogleAuthButton = ({ setUserInfo, text }) => {
   const { googleToken, getGoogleToken } = useGoogleAuth();
 
   const getUserGoogleData = async () => {
@@ -27,7 +27,7 @@ const GoogleAuthButton = ({ setUserInfo }) => {
       }
       icon="google"
     >
-      {googleToken ? "Get User Data" : "log in"}
+      {text && text}
     </AuthButton>
   );
 };

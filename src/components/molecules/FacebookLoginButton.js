@@ -1,12 +1,12 @@
 import AuthButton from "../atoms/AuthButton";
 
-const FacebookAuthButton = (props) => {
+const FacebookAuthButton = ({ text }) => {
   return (
     <AuthButton
       onPress={() => console.log("log in with Facebook")}
       icon="facebook"
     >
-      log in
+      {text && text}
     </AuthButton>
   );
 };
