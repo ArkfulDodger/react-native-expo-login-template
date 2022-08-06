@@ -1,7 +1,12 @@
+// REACT/EXPO -------------------------------------------------------
 import React, { useState, useEffect } from "react";
 import { View } from "react-native";
-import ValidationCheck from "../molecules/ValidationCheck";
+// SYSTEM -----------------------------------------------------------
 import { updateBoolStateConditionally } from "../../utils/utils";
+// COMPONENTS -------------------------------------------------------
+import PasswordAlphaNumericValidation from "../molecules/PasswordAlphaNumericValidation";
+import PasswordLengthValidation from "../molecules/PasswordLengthValidation";
+import PasswordMatchValidation from "../molecules/PasswordMatchValidation";
 
 const PasswordValidations = ({
   isPasswordValid,
@@ -20,7 +25,7 @@ const PasswordValidations = ({
     updateBoolStateConditionally({
       state: isPasswordValid,
       setter: setIsPasswordValid,
-      condistions: [
+      conditions: [
         isLengthValid,
         isAlphaNumericalityValid,
         isConfirmPasswordMatch,
@@ -28,60 +33,23 @@ const PasswordValidations = ({
     });
   }, [isLengthValid, isAlphaNumericalityValid, isConfirmPasswordMatch]);
 
-  // check/update password validations when password input changes
-  useEffect(() => {
-    updateBoolStateConditionally({
-      state: isLengthValid,
-      setter: setIsLengthValid,
-      conditions: getIsLengthValid(),
-    });
-    updateBoolStateConditionally({
-      state: isAlphaNumericalityValid,
-      setter: setIsAlphaNumericalityValid,
-      conditions: getIsAlphaNumericalityValid(),
-    });
-  }, [passwordInput]);
-
-  // check/update password match when either password input changes
-  useEffect(() => {
-    updateBoolStateConditionally({
-      state: isConfirmPasswordMatch,
-      setter: setIsConfirmPasswordMatch,
-      conditions: getIsConfirmPasswordMatch(),
-    });
-  }, [passwordInput, confirmPasswordInput]);
-
-  const getIsLengthValid = () => {
-    // TODO: Implement length validation
-    return true;
-  };
-
-  const getIsAlphaNumericalityValid = () => {
-    // TODO: Implement validation
-    return true;
-  };
-
-  const getIsConfirmPasswordMatch = () => {
-    // TODO: Verify password match
-    return true;
-  };
-
   return (
     <View>
-      <ValidationCheck
-        isValid={isLengthValid}
-        textTrue="has at least 8 characters"
-        textFalse="must have at least 8 characters"
+      <PasswordLengthValidation
+        isLengthValid={isLengthValid}
+        setIsLengthValid={setIsLengthValid}
+        passwordInput={passwordInput}
       />
-      <ValidationCheck
-        isValid={isAlphaNumericalityValid}
-        textTrue="has both letters and numbers"
-        textFalse="must have both letters and numbers"
+      <PasswordAlphaNumericValidation
+        isAlphaNumericalityValid={isAlphaNumericalityValid}
+        setIsAlphaNumericalityValid={setIsAlphaNumericalityValid}
+        passwordInput={passwordInput}
       />
-      <ValidationCheck
-        isValid={isConfirmPasswordMatch}
-        textTrue="passwords match!"
-        textFalse="passwords do not match"
+      <PasswordMatchValidation
+        isConfirmPasswordMatch={isConfirmPasswordMatch}
+        setIsConfirmPasswordMatch={setIsConfirmPasswordMatch}
+        passwordInput={passwordInput}
+        confirmPasswordInput={confirmPasswordInput}
       />
     </View>
   );

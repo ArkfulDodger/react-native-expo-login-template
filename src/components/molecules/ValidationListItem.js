@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { View } from "react-native";
 import { List } from "react-native-paper";
-import ValidationIcon from "../atoms/ValidationIcon";
 import { styles } from "../../theme/styles";
+import ValidationIcon from "../atoms/ValidationIcon";
 
-const ValidationCheck = ({ isValid, textTrue, textFalse }) => {
+const ValidationListItem = ({ isValid, textTrue, textFalse }) => {
   return (
     <List.Item
       title={isValid ? textTrue : textFalse}
@@ -14,4 +12,4 @@ const ValidationCheck = ({ isValid, textTrue, textFalse }) => {
   );
 };
 
-export default ValidationCheck;
+export default ValidationListItem;

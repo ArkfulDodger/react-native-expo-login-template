@@ -63,7 +63,10 @@ const CreateAccountForm = (props) => {
           confirmPasswordInput={confirmPasswordInput}
         />
       </View>
-      <AuthButton onPress={() => console.log("log in pressed")}>
+      <AuthButton
+        disabled={!isFormSubmittable}
+        onPress={() => console.log("log in pressed")}
+      >
         submit
       </AuthButton>
     </>
