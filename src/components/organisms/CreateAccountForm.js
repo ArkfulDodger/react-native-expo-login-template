@@ -44,6 +44,7 @@ const CreateAccountForm = (props) => {
         <AuthInput
           label="email"
           value={emailInput}
+          error={emailInput !== "" && !isEmailValid}
           onChangeText={(text) => setEmailInput(text)}
         />
         <SecureInput
