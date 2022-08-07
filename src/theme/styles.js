@@ -33,6 +33,11 @@ export const styles = StyleSheet.create({
     alignItems: "center",
   },
 
+  row: {
+    alignItems: "center",
+    flexDirection: "row",
+  },
+
   // center on both axes
   centered: {
     alignItems: "center",
