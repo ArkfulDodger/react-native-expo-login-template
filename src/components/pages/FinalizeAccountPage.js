@@ -12,6 +12,7 @@ import AuthButton from "../atoms/AuthButton";
 import AvatarEditable from "../molecules/AvatarEditable";
 import CreateAccountForm from "../organisms/CreateAccountForm";
 import DisplayNameEditable from "../molecules/DisplayNameEditable";
+import FullNameForm from "../organisms/FullNameForm";
 import HorizontalLine from "../atoms/HorizontalLine";
 import OauthCreateAccountMenu from "../organisms/OauthCreateAccountMenu";
 
@@ -20,10 +21,10 @@ const FinalizeAccountPage = ({ userInfo, setUserInfo }) => {
     <PageContainer>
       <View style={styles.spreadColumn}>
         <AvatarEditable userInfo={userInfo} />
-        <DisplayNameEditable />
+        <DisplayNameEditable userInfo={userInfo} />
         <HorizontalLine />
-        <AccountTypeIndicator />
-        {/* <FullNameForm /> */}
+        <AccountTypeIndicator userInfo={userInfo} />
+        <FullNameForm userInfo={userInfo} />
         <HorizontalLine />
         {/* <ThemeSelector /> */}
         <AuthButton onPress={() => console.log("saved and logged in!")}>

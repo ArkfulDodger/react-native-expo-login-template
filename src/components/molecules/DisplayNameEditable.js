@@ -5,6 +5,8 @@ import AuthInput from "../atoms/AuthInput";
 import ThinkingValidationIcon from "../molecules/ThinkingValidationIcon";
 
 const DisplayNameEditable = ({ userInfo }) => {
+  //TODO: Add Helper Text for status indication
+
   // create default info for dev purposes
   // TODO: remove once in place
   const defaultInfo = {
