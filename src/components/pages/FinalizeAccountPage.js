@@ -15,6 +15,7 @@ import DisplayNameEditable from "../molecules/DisplayNameEditable";
 import FullNameForm from "../organisms/FullNameForm";
 import HorizontalLine from "../atoms/HorizontalLine";
 import OauthCreateAccountMenu from "../organisms/OauthCreateAccountMenu";
+import ThemeSelector from "../organisms/ThemeSelector";
 
 const FinalizeAccountPage = ({ userInfo, setUserInfo }) => {
   return (
@@ -26,7 +27,7 @@ const FinalizeAccountPage = ({ userInfo, setUserInfo }) => {
         <AccountTypeIndicator userInfo={userInfo} />
         <FullNameForm userInfo={userInfo} />
         <HorizontalLine />
-        {/* <ThemeSelector /> */}
+        <ThemeSelector />
         <AuthButton onPress={() => console.log("saved and logged in!")}>
           save and log in
         </AuthButton>
