@@ -5,9 +5,7 @@ import * as WebBrowser from "expo-web-browser";
 import KeyboardAvoidingView from "../containers/KeyboardAvoidingView";
 // COMPONENTS -------------------------------------------------------
 import TitleImage from "../components/atoms/TitleImage";
-import LoginPage from "../components/pages/LoginPage";
-import CreateAccountPage from "../components/pages/CreateAccountPage";
-import FinalizeAccountPage from "../components/pages/FinalizeAccountPage";
+import AuthStack from "../navigation/AuthStack";
 
 // allows auth session to complete and return results
 WebBrowser.maybeCompleteAuthSession();
@@ -18,9 +16,7 @@ const AuthScreen = (props) => {
   return (
     <KeyboardAvoidingView>
       <TitleImage />
-      {/* <LoginPage userInfo={userInfo} setUserInfo={setUserInfo} /> */}
-      {/* <CreateAccountPage userInfo={userInfo} setUserInfo={setUserInfo} /> */}
-      <FinalizeAccountPage userInfo={userInfo} setUserInfo={setUserInfo} />
+      <AuthStack />
     </KeyboardAvoidingView>
   );
 };

@@ -9,7 +9,7 @@ import AuthInput from "../atoms/AuthInput";
 import PasswordValidations from "./PasswordValidations";
 import SecureInput from "../molecules/SecureInput";
 
-const CreateAccountForm = (props) => {
+const CreateAccountForm = ({ onSubmit }) => {
   // Input States
   const [emailInput, setEmailInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
@@ -64,10 +64,7 @@ const CreateAccountForm = (props) => {
           confirmPasswordInput={confirmPasswordInput}
         />
       </View>
-      <AuthButton
-        disabled={!isFormSubmittable}
-        onPress={() => console.log("log in pressed")}
-      >
+      <AuthButton disabled={!isFormSubmittable} onPress={onSubmit}>
         submit
       </AuthButton>
     </>

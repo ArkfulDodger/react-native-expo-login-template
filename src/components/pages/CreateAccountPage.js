@@ -11,15 +11,21 @@ import CreateAccountForm from "../organisms/CreateAccountForm";
 import HorizontalLine from "../atoms/HorizontalLine";
 import OauthCreateAccountMenu from "../organisms/OauthCreateAccountMenu";
 
-const CreateAccountPage = (props) => {
+const CreateAccountPage = ({ navigation }) => {
+  const goToFinalizeAccount = () => {
+    navigation.navigate("Finalize Account");
+  };
+
   return (
     <PageContainer>
       <View style={styles.spreadColumn}>
         <Headline>Create Account</Headline>
-        <CreateAccountForm />
+        <CreateAccountForm onSubmit={goToFinalizeAccount} />
         <HorizontalLine />
         <OauthCreateAccountMenu />
-        <Button>return to login</Button>
+        <Button onPress={() => navigation.navigate("Login")}>
+          return to login
+        </Button>
       </View>
     </PageContainer>
   );

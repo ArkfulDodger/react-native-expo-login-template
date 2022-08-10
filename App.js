@@ -1,9 +1,14 @@
+// PRIORITY IMPORTS -------------------------------------------------
+import "react-native-gesture-handler";
 // REACT/EXPO -------------------------------------------------------
 import { useEffect, useState, useCallback } from "react";
 import * as SplashScreen from "expo-splash-screen";
 // EXTERNAL ---------------------------------------------------------
+import { NavigationContainer } from "@react-navigation/native";
 import { Provider as PaperProvider } from "react-native-paper";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+// SYSTEM -----------------------------------------------------------
+import { styles } from "./src/theme/styles";
 // HOOKS ------------------------------------------------------------
 import useConfigureApp from "./src/hooks/useConfigureApp";
 // CONTAINERS -------------------------------------------------------
@@ -42,11 +47,13 @@ export default function App() {
   return (
     <PaperProvider>
       <SafeAreaProvider>
-        <BackgroundGradientContainer onLayout={onLayoutRootView}>
-          <SafeAreaView style={{ flex: 1 }}>
-            <AuthScreen />
-          </SafeAreaView>
-        </BackgroundGradientContainer>
+        <NavigationContainer theme={styles.navContainer}>
+          <BackgroundGradientContainer onLayout={onLayoutRootView}>
+            <SafeAreaView style={{ flex: 1 }}>
+              <AuthScreen />
+            </SafeAreaView>
+          </BackgroundGradientContainer>
+        </NavigationContainer>
       </SafeAreaProvider>
     </PaperProvider>
   );

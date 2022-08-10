@@ -13,18 +13,19 @@ import HorizontalLine from "../atoms/HorizontalLine";
 import LoginForm from "../organisms/LoginForm";
 import UserInfoDisplay from "../molecules/UserInfoDisplay";
 
-const LoginPage = ({ userInfo, setUserInfo }) => {
+const LoginPage = ({ userInfo, setUserInfo, navigation }) => {
   return (
     <PageContainer>
       <View style={styles.spreadColumn}>
-        {/* {userInfo && <UserInfoDisplay userInfo={userInfo} />} */}
         <Headline>Log In</Headline>
         <LoginForm />
         <HorizontalLine />
         <GoogleLoginButton setUserInfo={setUserInfo} text="log in" />
         <FacebookLoginButton text="log in" />
         <View>
-          <Button>create account</Button>
+          <Button onPress={() => navigation.navigate("Create Account")}>
+            create account
+          </Button>
           <Button>forgot password?</Button>
         </View>
       </View>

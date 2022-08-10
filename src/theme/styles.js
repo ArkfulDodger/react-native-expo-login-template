@@ -1,5 +1,8 @@
 import { StyleSheet } from "react-native";
+import useFadeSlide from "../hooks/useFadeSlide";
 import { colors } from "./colors";
+
+const forSlide = useFadeSlide();
 
 export const styles = StyleSheet.create({
   // fill the parent container
@@ -70,5 +73,13 @@ export const styles = StyleSheet.create({
   noPaddingNoMargin: {
     padding: 0,
     margin: 0,
+  },
+
+  navContainer: { colors: { background: "transparent" } },
+
+  defaultStackOptions: {
+    headerShown: false,
+    cardStyleInterpolator: forSlide,
+    presentation: "modal",
   },
 });
