@@ -1,41 +1,14 @@
-import React, { useState, useEffect } from "react";
-import { View } from "react-native";
-import { Title } from "react-native-paper";
-import { styles } from "../../theme/styles";
-// import SelectorRow from "../molecules/SelectorRow";
-import SelectorButton from "../atoms/SelectorButton";
+import SelectorRow from "../molecules/SelectorRow";
 
 const ThemeSelector = (props) => {
-  const [selection, setSelection] = useState("auto");
+  // TODO: programatically set options according to available theme options
 
   return (
-    <View style={styles.spreadRow}>
-      <Title>Theme:</Title>
-      <SelectorButton
-        value="auto"
-        selection={selection}
-        setSelection={setSelection}
-      />
-      <SelectorButton
-        value="light"
-        selection={selection}
-        setSelection={setSelection}
-      />
-      <SelectorButton
-        value="dark"
-        selection={selection}
-        setSelection={setSelection}
-      />
-    </View>
-
-    // <SelectorButton.Row
-    //   label="theme:"
-    //   onSelectionChange={(value) => setSelection(value)}
-    // >
-    //   <SelectorButton value="auto" text="auto" />
-    //   <SelectorButton value="light" text="light" />
-    //   <SelectorButton value="dark" text="dark" />
-    // </SelectorButton.Row>
+    <SelectorRow
+      label="Theme:"
+      options={["auto", "light", "dark"]}
+      defaultOption="auto"
+    />
   );
 };
 

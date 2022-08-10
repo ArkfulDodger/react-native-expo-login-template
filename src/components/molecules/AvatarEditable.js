@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
 import { Pressable } from "react-native";
-import { Avatar, IconButton } from "react-native-paper";
+import { Avatar } from "react-native-paper";
 import OffsetEditIcon from "../atoms/OffsetEditIcon";
 
 const AvatarEditable = ({ userInfo }) => {

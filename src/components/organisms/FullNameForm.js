@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import { View } from "react-native";
-import { Checkbox } from "react-native-paper";
 import AuthInput from "../atoms/AuthInput";
 import CheckboxListItem from "../molecules/CheckboxListItem";
 

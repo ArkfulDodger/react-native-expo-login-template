@@ -1,7 +1,6 @@
 // REACT/EXPO -------------------------------------------------------
-import React, { useState, useEffect } from "react";
 import { View } from "react-native";
-import { Title, Text } from "react-native-paper";
+import { Title } from "react-native-paper";
 // SYSTEM -----------------------------------------------------------
 import { styles } from "../../theme/styles";
 // COMPONENTS -------------------------------------------------------

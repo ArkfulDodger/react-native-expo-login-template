@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import { View, ActivityIndicator } from "react-native";
 import ValidationIcon from "../atoms/ValidationIcon";
 

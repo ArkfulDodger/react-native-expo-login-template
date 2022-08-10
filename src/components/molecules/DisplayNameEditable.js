@@ -1,6 +1,9 @@
+// REACT/EXPO -------------------------------------------------------
 import React, { useState, useEffect } from "react";
 import { View, ActivityIndicator } from "react-native";
+// SYSTEM -----------------------------------------------------------
 import { styles } from "../../theme/styles";
+// COMPONENTS -------------------------------------------------------
 import AuthInput from "../atoms/AuthInput";
 import ThinkingValidationIcon from "../molecules/ThinkingValidationIcon";
 

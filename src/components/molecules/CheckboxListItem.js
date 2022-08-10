@@ -1,4 +1,3 @@
-import { Platform } from "react-native";
 import { List } from "react-native-paper";
 import { styles } from "../../theme/styles";
 import CheckboxIcon from "../atoms/CheckboxIcon";

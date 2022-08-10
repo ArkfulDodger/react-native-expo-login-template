@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { View } from "react-native";
-import { List, MD3Colors } from "react-native-paper";
+import { List } from "react-native-paper";
 import { styles } from "../../theme/styles";
 
 const ValidationIcon = ({ isValid }) => {
