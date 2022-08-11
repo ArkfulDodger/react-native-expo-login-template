@@ -19,13 +19,19 @@ const AuthInput = (props) => {
   return (
     <TextInput
       {...props}
+      right={
+        isMarkedError ? (
+          <TextInput.Icon name={"exclamation-thick"} />
+        ) : (
+          props.right
+        )
+      }
       mode="outlined"
       style={styles.authInput}
       dense="true"
       onBlur={onBlur}
       onFocus={onFocus}
       error={isMarkedError}
-      right={isMarkedError && <TextInput.Icon name={"exclamation-thick"} />}
       textContentType="oneTimeCode" // ensures password fields not covered in iOS
     />
   );
