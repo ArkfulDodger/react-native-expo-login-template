@@ -1,69 +1,90 @@
-import { DefaultTheme } from "react-native-paper";
-import { styles } from "./styles";
 import { colors } from "./colors";
 import fonts from "./fonts";
+import useCombinedThemes from "../hooks/useCombinedThemes";
 
-const paperDefaultReference = {
-  dark: false,
-  // mode not listed
-  roundness: 4,
-  colors: {
-    primary: "#6200ee",
-    accent: "#03dac4",
-    background: "#f6f6f6",
-    surface: "#ffffff",
-    text: "#000000",
-    disabled: "rgba(0, 0, 0, 0.26)",
-    placeholder: "rgba(0, 0, 0, 0.54)",
-    backdrop: "rgba(0, 0, 0, 0.5)",
-    onSurface: "#000000",
-    notification: "#f50057",
-    error: "#B00020",
-  },
-  fonts: {
-    regular: {
-      fontFamily: "sans-serif",
-      fontWeight: "normal",
-    },
-    medium: {
-      fontFamily: "sans-serif-medium",
-      fontWeight: "normal",
-    },
-    light: {
-      fontFamily: "sans-serif-light",
-      fontWeight: "normal",
-    },
-    thin: {
-      fontFamily: "sans-serif-thin",
-      fontWeight: "normal",
-    },
-  },
-  animation: {
-    scale: 1,
-  },
-};
+// combined theme defaults from react navigation and react native paper
+const { CombinedDefaultTheme, CombinedDarkTheme } = useCombinedThemes();
 
-const universalTheme = {
-  ...DefaultTheme,
+//#region Combined Theme defaults for reference
+
+// DEFAULT THEME:
+// "dark": false,
+// "roundness": 4,
+// "animation": {
+//   "scale": 1,
+// },
+// "colors": // colors ref in color file
+// "fonts": {
+//   "medium": {
+//     "fontFamily": "System",
+//     "fontWeight": "500",
+//   },
+//   "regular": {
+//     "fontFamily": "System",
+//     "fontWeight": "400",
+//   },
+//   "light": {
+//     "fontFamily": "System",
+//     "fontWeight": "300",
+//   },
+//   "thin": {
+//     "fontFamily": "System",
+//     "fontWeight": "100",
+//   },
+// },
+
+// DARK THEME
+// "dark": true,
+// "mode": "adaptive",
+// "roundness": 4,
+// "animation": {
+//   "scale": 1,
+// },
+// "colors": // colors ref in color file
+// "fonts": {
+//   "medium": {
+//     "fontFamily": "System",
+//     "fontWeight": "500",
+//   },
+//   "regular": {
+//     "fontFamily": "System",
+//     "fontWeight": "400",
+//   },
+//   "light": {
+//     "fontFamily": "System",
+//     "fontWeight": "300",
+//   },
+//   "thin": {
+//     "fontFamily": "System",
+//     "fontWeight": "100",
+//   },
+// },
+
+//#endregion
+
+// settings to apply across all themes
+const universalSettings = {
   roundness: 4,
   // fonts
   // animation
 };
 
-const light = {
-  ...universalTheme,
+const lightTheme = {
+  ...CombinedDefaultTheme,
+  ...universalSettings,
   dark: false,
   colors: colors.light,
 };
 
-const dark = {
-  ...universalTheme,
+const darkTheme = {
+  ...CombinedDarkTheme,
+  ...universalSettings,
   dark: true,
   mode: "adaptive",
   colors: colors.dark,
 };
 
 export const themes = {
-  light,
-  dark,
+  lightTheme,
+  darkTheme,
 };

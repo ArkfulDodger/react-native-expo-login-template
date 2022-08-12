@@ -1,35 +1,56 @@
-import { DefaultTheme, DarkTheme } from "react-native-paper";
+import useCombinedThemes from "../hooks/useCombinedThemes";
 
-//#region react-native-paper defaults for reference
+// combined theme defaults from react navigation and react native paper
+const { CombinedDefaultTheme, CombinedDarkTheme } = useCombinedThemes();
+
+//#region Combined Theme defaults for reference
+
 // DEFAULT LIGHT:
-//    primary: "#6200ee"
-//    accent: "#03dac4"
-//    background: "#f6f6f6"
-//    surface: "#ffffff"
-//    text: "#000000"
-//    disabled: "rgba(0, 0, 0, 0.26)"
-//    placeholder: "rgba(0, 0, 0, 0.54)"
-//    backdrop: "rgba(0, 0, 0, 0.5)"
-//    onSurface: "#000000"
-//    notification: "#f50057"
-//    error: "#B00020"
-//
+// "primary": "rgb(0, 122, 255)",
+// "accent": "#03dac4",
+// "background": "rgb(242, 242, 242)",
+// "surface": "#ffffff",
+// "text": "rgb(28, 28, 30)",
+// "disabled": "rgba(0, 0, 0, 0.26)",
+// "placeholder": "rgba(0, 0, 0, 0.54)",
+// "backdrop": "rgba(0, 0, 0, 0.5)",
+// "onSurface": "#000000",
+// "notification": "rgb(255, 59, 48)",
+// "error": "#B00020",
+// "border": "rgb(216, 216, 216)",
+// "card": "rgb(255, 255, 255)",
+
 // DEFAULT DARK:
+// "primary": "rgb(10, 132, 255)",
+// "accent": "#03dac6",
+// "background": "rgb(1, 1, 1)",
+// "surface": "#121212",
+// "text": "rgb(229, 229, 231)",
+// "disabled": "rgba(255, 255, 255, 0.38)",
+// "placeholder": "rgba(255, 255, 255, 0.54)",
+// "backdrop": "rgba(0, 0, 0, 0.5)",
+// "onSurface": "#FFFFFF",
+// "notification": "rgb(255, 69, 58)",
+// "error": "#CF6679",
+// "border": "rgb(39, 39, 41)",
+// "card": "rgb(18, 18, 18)",
+
+// RN-PAPER LIGHT - Variants:
+//    primary: "#6200ee"
+//    background: "#f6f6f6"
+//    text: "#000000"
+//    notification: "#f50057"
+//
+// RN-PAPER DARK - Variants:
 //    "primary": "#BB86FC",
-//    "accent": "#03dac6",
 //    "background": "#121212",
-//    "surface": "#121212",
 //    "text": "#ffffff",
-//    "disabled": "rgba(255, 255, 255, 0.38)",
-//    "placeholder": "rgba(255, 255, 255, 0.54)",
-//    "backdrop": "rgba(0, 0, 0, 0.5)",
-//    "onSurface": "#FFFFFF",
 //    "notification": "#ff80ab",
-//    "error": "#CF6679",
 //#endregion
 
 // light theme color palette
 const lightMain = {
+  background: "transparent",
   backgroundStart: "#FFFFFF",
   backroundEnd: "#FFE2CD",
   backgroundMid: "#FFF0E6", // midway btw gradient top/bottom
@@ -38,16 +59,6 @@ const lightMain = {
   secondary: "#FAC336",
   submit: "#BC02D9",
   accent: "#00ACB7",
-
-  background: "#f6f6f6", // not customized
-  surface: "#ffffff", // not customized
-  text: "#000000", // not customized
-  disabled: "rgba(0, 0, 0, 0.26)", // not customized
-  placeholder: "rgba(0, 0, 0, 0.54)", // not customized
-  backdrop: "rgba(0, 0, 0, 0.5)", // not customized
-  onSurface: "#000000", // not customized
-  notification: "#f50057", // not customized
-  error: "#B00020", // not customized
 };
 
 // light theme color gradients
@@ -56,6 +67,7 @@ const lightGradients = {
 };
 
 const darkMain = {
+  background: "transparent",
   backgroundStart: "#0a063b",
   backroundEnd: "#000000",
   backgroundMid: "#05031e", // midway btw gradient top/bottom
@@ -64,16 +76,6 @@ const darkMain = {
   secondary: "#5943D8",
   submit: "#C50EE1",
   accent: "#00ACB7",
-
-  background: "#121212", // not customized
-  surface: "#121212", // not customized
-  text: "#FFFFFF", // not customized
-  disabled: "rgba(255, 255, 255, 0.38)", // not customized
-  placeholder: "rgba(255, 255, 255, 0.54)", // not customized
-  backdrop: "rgba(0, 0, 0, 0.5)", // not customized
-  onSurface: "#FFFFFF", // not customized
-  notification: "#ff80ab", // not customized
-  error: "#CF6679", // not customized
 };
 
 const darkGradients = {
@@ -82,6 +84,6 @@ const darkGradients = {
 
 // TODO: set theme to dark if device or app is set to dark theme
 export const colors = {
-  light: { ...DefaultTheme.colors, ...lightMain, ...lightGradients },
-  dark: { ...DarkTheme.colors, ...darkMain, ...darkGradients },
+  light: { ...CombinedDefaultTheme.colors, ...lightMain, ...lightGradients },
+  dark: { ...CombinedDarkTheme.colors, ...darkMain, ...darkGradients },
 };

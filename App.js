@@ -56,9 +56,9 @@ export default function App() {
   return (
     <PaperProvider theme={theme}>
       <SafeAreaProvider>
-        <NavigationContainer theme={styles.navContainer}>
+        <NavigationContainer theme={theme}>
           <BackgroundGradientContainer onLayout={onLayoutRootView}>
-            <SafeAreaView style={{ flex: 1 }}>
+            <SafeAreaView style={styles.fillContainer}>
               <AuthScreen />
             </SafeAreaView>
           </BackgroundGradientContainer>

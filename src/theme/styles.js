@@ -74,8 +74,6 @@ export const styles = StyleSheet.create({
     margin: 0,
   },
 
-  navContainer: { colors: { background: "transparent" } },
-
   defaultStackOptions: {
     headerShown: false,
     cardStyleInterpolator: forSlide,
