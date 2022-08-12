@@ -9,11 +9,16 @@ const custom = {
   AppareoBlack: require("../assets/fonts/AppareoBlack.ttf"),
   "Teko-Regular": require("../assets/fonts/Teko-Regular.ttf"),
   "Teko-Bold": require("../assets/fonts/Teko-Bold.ttf"),
+  "Ubuntu-Bold": require("../assets/fonts/Ubuntu-Bold.ttf"),
+  "Ubuntu-Medium": require("../assets/fonts/Ubuntu-Medium.ttf"),
+  "Ubuntu-Regular": require("../assets/fonts/Ubuntu-Regular.ttf"),
+  "Ubuntu-Light": require("../assets/fonts/Ubuntu-Light.ttf"),
 };
 
 // set fonts family to use for specified purpose
 const type = {
-  default: Platform.OS === "ios" ? "System" : "Roboto",
+  // default: Platform.OS === "ios" ? "System" : "Roboto",
+  default: "Ubuntu-Regular",
   titleFaded: "AppareoExtraLight",
   titleSemiFade: "AppareoLight",
   titleDefault: "AppareoMedium",

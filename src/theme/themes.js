@@ -64,8 +64,21 @@ const { CombinedDefaultTheme, CombinedDarkTheme } = useCombinedThemes();
 
 // settings to apply across all themes
 const universalSettings = {
-  roundness: 4,
-  // fonts
+  roundness: 10,
+  fonts: {
+    medium: {
+      fontFamily: fonts.type.default,
+    },
+    regular: {
+      fontFamily: fonts.type.default,
+    },
+    light: {
+      fontFamily: fonts.type.default,
+    },
+    thin: {
+      fontFamily: fonts.type.default,
+    },
+  },
   // animation
 };
 
