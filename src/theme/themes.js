@@ -67,13 +67,13 @@ const universalSettings = {
   roundness: 10,
   fonts: {
     medium: {
-      fontFamily: fonts.type.default,
+      fontFamily: fonts.type.defaultMedium,
     },
     regular: {
       fontFamily: fonts.type.default,
     },
     light: {
-      fontFamily: fonts.type.default,
+      fontFamily: fonts.type.defaultLight,
     },
     thin: {
       fontFamily: fonts.type.default,

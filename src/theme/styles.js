@@ -1,6 +1,7 @@
 import { StyleSheet } from "react-native";
 import useFadeSlide from "../hooks/useFadeSlide";
 import { colors } from "./colors";
+import fonts from "./fonts";
 
 const forSlide = useFadeSlide();
 
@@ -12,7 +13,7 @@ export const styles = StyleSheet.create({
 
   pageMargins: {
     marginHorizontal: 15,
-    marginVertical: 10,
+    marginVertical: 15,
   },
 
   spreadColumn: {
@@ -61,11 +62,19 @@ export const styles = StyleSheet.create({
   // auth page text input styling
   authInput: {
     alignSelf: "stretch",
+    fontSize: fonts.size.font20,
   },
 
   // auth page buttons
   authButton: {
     alignSelf: "stretch",
+    padding: 3,
+  },
+
+  // auth page button text
+  authButtonText: {
+    fontSize: fonts.size.font24,
+    fontFamily: fonts.type.defaultLight,
   },
 
   // remove padding and margins

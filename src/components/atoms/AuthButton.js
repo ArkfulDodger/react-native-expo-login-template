@@ -10,6 +10,7 @@ const AuthButton = (props) => {
       mode="contained"
       uppercase={false}
       style={styles.authButton}
+      labelStyle={styles.authButtonText}
       theme={{ colors: { primary: colors.submit } }}
     >
       {props.children}
