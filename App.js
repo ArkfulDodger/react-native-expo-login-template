@@ -37,6 +37,7 @@ export default function App() {
       .catch(() => console.warn("configuration failure"));
   }, []);
 
+  // reconfigure necesary theme settings on each theme update
   useEffect(() => {
     utils.configureThemeSettings(theme.dark);
   }, [theme]);
