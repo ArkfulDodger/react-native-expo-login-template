@@ -61,7 +61,6 @@ export const styles = StyleSheet.create({
   // auth page text input styling
   authInput: {
     alignSelf: "stretch",
-    backgroundColor: colors.inputBackground,
   },
 
   // auth page buttons

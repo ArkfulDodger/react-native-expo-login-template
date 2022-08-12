@@ -1,4 +1,4 @@
-import { Platform } from "react-native";
+import { Platform, StatusBar } from "react-native";
 
 // performs configuration work specific to different platforms
 // for use on startup
@@ -8,6 +8,11 @@ export const configurePlatformSpecificSettings = () => {
 
   if (Platform.OS === "ios") {
   }
+};
+
+export const configureThemeSettings = (isDark) => {
+  StatusBar.setBarStyle(isDark ? "light-content" : "dark-content");
+  return;
 };
 
 // regex for email validation sourced from http://emailregex.com/

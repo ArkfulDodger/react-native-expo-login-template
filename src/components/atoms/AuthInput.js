@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { TextInput } from "react-native-paper";
-import { colors } from "../../theme/colors";
+import { TextInput, useTheme } from "react-native-paper";
 import { styles } from "../../theme/styles";
 
 const AuthInput = (props) => {
   const [isMarkedError, setIsMarkedError] = useState(false);
+  const { colors } = useTheme();
 
   const onBlur = () => {
     props.onBlur && props.onBlur();
@@ -27,12 +27,13 @@ const AuthInput = (props) => {
         )
       }
       mode="outlined"
-      style={styles.authInput}
+      style={[styles.authInput, { backgroundColor: colors.backgroundLight }]}
       dense="true"
       onBlur={onBlur}
       onFocus={onFocus}
       error={isMarkedError}
       textContentType="oneTimeCode" // ensures password fields not covered in iOS
+      theme={{ colors: { primary: colors.submit } }}
     />
   );
 };

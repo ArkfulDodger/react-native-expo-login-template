@@ -9,8 +9,11 @@ import { Provider as PaperProvider } from "react-native-paper";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 // SYSTEM -----------------------------------------------------------
 import { styles } from "./src/theme/styles";
+import { themes } from "./src/theme/themes";
+import * as utils from "./src/utils/utils";
 // HOOKS ------------------------------------------------------------
 import useConfigureApp from "./src/hooks/useConfigureApp";
+import useSystemTheme from "./src/hooks/useSystemTheme";
 // CONTAINERS -------------------------------------------------------
 import BackgroundGradientContainer from "./src/containers/BackgroundGradientContainer";
 // COMPONENTS -------------------------------------------------------
@@ -25,6 +28,7 @@ SplashScreen.preventAutoHideAsync();
 
 export default function App() {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [theme, setTheme] = useState(themes[useSystemTheme()]);
 
   // configure app on startup
   useEffect(() => {
@@ -32,6 +36,10 @@ export default function App() {
       .then(() => setIsLoaded(true))
       .catch(() => console.warn("configuration failure"));
   }, []);
+
+  useEffect(() => {
+    utils.configureThemeSettings(theme.dark);
+  }, [theme]);
 
   // callback to remove splash screen once main app has rendered
   const onLayoutRootView = useCallback(async () => {
@@ -45,7 +53,7 @@ export default function App() {
 
   // render app within universal background container
   return (
-    <PaperProvider>
+    <PaperProvider theme={theme}>
       <SafeAreaProvider>
         <NavigationContainer theme={styles.navContainer}>
           <BackgroundGradientContainer onLayout={onLayoutRootView}>
