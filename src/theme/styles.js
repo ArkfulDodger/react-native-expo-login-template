@@ -69,6 +69,7 @@ export const styles = StyleSheet.create({
   authButton: {
     alignSelf: "stretch",
     padding: 3,
+    elevation: 6,
   },
 
   // auth page button text
