@@ -29,6 +29,13 @@ export const styles = StyleSheet.create({
     alignItems: "center",
   },
 
+  spacedRow: {
+    alignSelf: "stretch",
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+  },
+
   centeredRow: {
     alignSelf: "center",
     flexDirection: "row",
@@ -100,5 +107,11 @@ export const styles = StyleSheet.create({
     headerShown: false,
     cardStyleInterpolator: forSlide,
     presentation: "modal",
+  },
+
+  buttonAvatarImage: {
+    borderRadius: 0,
+    margin: 5,
+    backgroundColor: "transparent",
   },
 });

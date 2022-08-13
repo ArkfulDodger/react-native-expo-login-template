@@ -6,7 +6,7 @@ import FacebookLoginButton from "../molecules/FacebookLoginButton";
 
 const OauthCreateAccountMenu = (props) => {
   return (
-    <View style={styles.spreadRow}>
+    <View style={styles.spacedRow}>
       <GoogleLoginButton />
       <FacebookLoginButton />
     </View>
