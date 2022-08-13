@@ -1,6 +1,5 @@
 import { StyleSheet } from "react-native";
 import useFadeSlide from "../hooks/useFadeSlide";
-import { colors } from "./colors";
 import fonts from "./fonts";
 
 const forSlide = useFadeSlide();
@@ -75,6 +74,19 @@ export const styles = StyleSheet.create({
   // auth page button text
   authButtonText: {
     fontSize: fonts.size.font24,
+    fontFamily: fonts.type.defaultLight,
+    marginVertical: 9,
+    marginHorizontal: 16,
+  },
+
+  // auth page buttons
+  textButton: {
+    padding: 5,
+  },
+
+  // text page button text
+  textButtonText: {
+    fontSize: fonts.size.font16,
     fontFamily: fonts.type.defaultLight,
   },
 
