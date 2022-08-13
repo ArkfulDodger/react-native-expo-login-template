@@ -1,13 +1,18 @@
-import AuthButton from "../atoms/AuthButton";
+import AvatarCard from "../atoms/AvatarCard";
+import { styles } from "../../theme/styles";
 
 const FacebookAuthButton = ({ text }) => {
+  const facebookLogo = require("../../assets/images/facebook-logo-simple.png");
+
   return (
-    <AuthButton
+    <AvatarCard
       onPress={() => console.log("log in with Facebook")}
-      icon="facebook"
+      image={facebookLogo}
+      style={[styles.authButton, { backgroundColor: "#1977F3" }]}
+      textStyle={{ ...styles.authButtonText, color: "white" }}
     >
-      {text && text}
-    </AuthButton>
+      {text}
+    </AvatarCard>
   );
 };
 

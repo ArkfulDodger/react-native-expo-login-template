@@ -1,10 +1,11 @@
 import { useState } from "react";
 import useGoogleAuth from "../../hooks/useGoogleAuth";
-import AuthButton from "../atoms/AuthButton";
 import AvatarCard from "../atoms/AvatarCard";
 import { styles } from "../../theme/styles";
 
 const GoogleAuthButton = ({ setUserInfo, text }) => {
+  const googleLogo = require("../../assets/images/google-logo.png");
+
   const { googleToken, getGoogleToken } = useGoogleAuth();
 
   const getUserGoogleData = async () => {
@@ -21,19 +22,18 @@ const GoogleAuthButton = ({ setUserInfo, text }) => {
   };
 
   return (
-    <AvatarCard style={styles.authButton} textStyle={styles.authButtonText}>
-      log in
+    <AvatarCard
+      onPress={
+        googleToken
+          ? getUserGoogleData
+          : () => getGoogleToken({ showInRecents: true })
+      }
+      image={googleLogo}
+      style={styles.authButton}
+      textStyle={styles.authButtonText}
+    >
+      {text}
     </AvatarCard>
-    // <AuthButton
-    //   onPress={
-    //     googleToken
-    //       ? getUserGoogleData
-    //       : () => getGoogleToken({ showInRecents: true })
-    //   }
-    //   icon="google"
-    // >
-    //   {text && text}
-    // </AuthButton>
   );
 };
 
