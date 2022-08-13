@@ -12,6 +12,7 @@ import GoogleLoginButton from "../molecules/GoogleLoginButton";
 import HorizontalLine from "../atoms/HorizontalLine";
 import LoginForm from "../organisms/LoginForm";
 import UserInfoDisplay from "../molecules/UserInfoDisplay";
+import TextButton from "../atoms/TextButton";
 
 const LoginPage = ({ userInfo, setUserInfo, navigation }) => {
   return (
@@ -23,10 +24,18 @@ const LoginPage = ({ userInfo, setUserInfo, navigation }) => {
         <GoogleLoginButton setUserInfo={setUserInfo} text="log in" />
         <FacebookLoginButton text="log in" />
         <View>
-          <Button onPress={() => navigation.navigate("Create Account")}>
+          <TextButton
+            fontSize={20}
+            onPress={() => navigation.navigate("Create Account")}
+          >
             create account
-          </Button>
-          <Button>forgot password?</Button>
+          </TextButton>
+          <TextButton
+            fontSize={14}
+            onPress={() => console.log("forgot password pressed")}
+          >
+            forgot password?
+          </TextButton>
         </View>
       </View>
     </PageContainer>

@@ -10,6 +10,7 @@ import PageContainer from "../../containers/PageContainer";
 import CreateAccountForm from "../organisms/CreateAccountForm";
 import HorizontalLine from "../atoms/HorizontalLine";
 import OauthCreateAccountMenu from "../organisms/OauthCreateAccountMenu";
+import TextButton from "../atoms/TextButton";
 
 const CreateAccountPage = ({ navigation }) => {
   const goToFinalizeAccount = () => {
@@ -23,9 +24,9 @@ const CreateAccountPage = ({ navigation }) => {
         <CreateAccountForm onSubmit={goToFinalizeAccount} />
         <HorizontalLine />
         <OauthCreateAccountMenu />
-        <Button onPress={() => navigation.navigate("Login")}>
+        <TextButton fontSize={20} onPress={() => navigation.navigate("Login")}>
           return to login
-        </Button>
+        </TextButton>
       </View>
     </PageContainer>
   );
