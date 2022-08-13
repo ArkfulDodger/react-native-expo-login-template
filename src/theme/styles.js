@@ -22,6 +22,12 @@ export const styles = StyleSheet.create({
     alignItems: "center",
   },
 
+  centeredColumn: {
+    flexDirection: "column",
+    alignItems: "center",
+    alignSelf: "stretch",
+  },
+
   spreadRow: {
     alignSelf: "stretch",
     flexDirection: "row",
@@ -75,6 +81,7 @@ export const styles = StyleSheet.create({
   authButton: {
     alignSelf: "stretch",
     padding: 3,
+    marginVertical: 10,
     elevation: 6,
   },
 

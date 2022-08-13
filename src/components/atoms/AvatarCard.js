@@ -5,7 +5,7 @@ import { styles } from "../../theme/styles";
 const AvatarCard = (props) => {
   return (
     <Card style={props.style} elevation={props.style.elevation || 1}>
-      <TouchableRipple {...props}>
+      <TouchableRipple onPress={props.onPress}>
         <View style={styles.centeredRow}>
           <Avatar.Image
             size={props.size || props.textStyle.fontSize * 1.5}
