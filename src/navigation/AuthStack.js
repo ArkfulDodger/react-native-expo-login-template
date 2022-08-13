@@ -15,7 +15,7 @@ const Stack = createStackNavigator();
 const AuthStack = (props) => {
   return (
     <Stack.Navigator
-      initialRouteName="Login"
+      initialRouteName="Finalize Account"
       screenOptions={styles.defaultStackOptions}
     >
       <Stack.Screen name="Login" component={LoginPage} />

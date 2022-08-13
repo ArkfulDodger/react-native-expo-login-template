@@ -1,7 +1,7 @@
 // PRIORITY IMPORTS -------------------------------------------------
 import "react-native-gesture-handler";
 // REACT/EXPO -------------------------------------------------------
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, createContext } from "react";
 import * as SplashScreen from "expo-splash-screen";
 // EXTERNAL ---------------------------------------------------------
 import { NavigationContainer } from "@react-navigation/native";
@@ -21,7 +21,8 @@ import AuthScreen from "./src/screens/AuthScreen";
 
 // TODO: update splash screen to be customized/animated
 
-// Test change
+// Contexts to set
+export const ThemeContext = createContext();
 
 // keep splash screen visible until prompted
 SplashScreen.preventAutoHideAsync();
@@ -55,15 +56,17 @@ export default function App() {
   // render app within universal background container
   return (
     <PaperProvider theme={theme}>
-      <SafeAreaProvider>
-        <NavigationContainer theme={theme}>
-          <BackgroundGradientContainer onLayout={onLayoutRootView}>
-            <SafeAreaView style={styles.fillContainer}>
-              <AuthScreen />
-            </SafeAreaView>
-          </BackgroundGradientContainer>
-        </NavigationContainer>
-      </SafeAreaProvider>
+      <ThemeContext.Provider value={setTheme}>
+        <SafeAreaProvider>
+          <NavigationContainer theme={theme}>
+            <BackgroundGradientContainer onLayout={onLayoutRootView}>
+              <SafeAreaView style={styles.fillContainer}>
+                <AuthScreen />
+              </SafeAreaView>
+            </BackgroundGradientContainer>
+          </NavigationContainer>
+        </SafeAreaProvider>
+      </ThemeContext.Provider>
     </PaperProvider>
   );
 }

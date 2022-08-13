@@ -1,6 +1,5 @@
 import { View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import { colors } from "../theme/colors";
 import { styles } from "../theme/styles";
 import { useTheme } from "react-native-paper";
 
