@@ -1,7 +1,7 @@
 // PRIORITY IMPORTS -------------------------------------------------
 import "react-native-gesture-handler";
 // REACT/EXPO -------------------------------------------------------
-import { useEffect, useState, useCallback, createContext } from "react";
+import { useEffect, useState, useCallback } from "react";
 import * as SplashScreen from "expo-splash-screen";
 // EXTERNAL ---------------------------------------------------------
 import { NavigationContainer } from "@react-navigation/native";
@@ -14,15 +14,13 @@ import * as utils from "./src/utils/utils";
 // HOOKS ------------------------------------------------------------
 import useConfigureApp from "./src/hooks/useConfigureApp";
 import useSystemTheme from "./src/hooks/useSystemTheme";
+import { ThemeContext } from "./src/contexts/GlobalContexts";
 // CONTAINERS -------------------------------------------------------
 import BackgroundGradientContainer from "./src/containers/BackgroundGradientContainer";
 // COMPONENTS -------------------------------------------------------
 import AuthScreen from "./src/screens/AuthScreen";
 
 // TODO: update splash screen to be customized/animated
-
-// Contexts to set
-export const ThemeContext = createContext();
 
 // keep splash screen visible until prompted
 SplashScreen.preventAutoHideAsync();

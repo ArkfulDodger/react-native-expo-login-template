@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { themes } from "../../theme/themes";
 // HOOKS ------------------------------------------------------------
 import useSystemTheme from "../../hooks/useSystemTheme";
-import { ThemeContext } from "../../../App";
+import { ThemeContext } from "../../contexts/GlobalContexts";
 // COMPONENTS -------------------------------------------------------
 import SelectorRow from "../molecules/SelectorRow";
 
