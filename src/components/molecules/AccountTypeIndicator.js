@@ -3,9 +3,11 @@ import { View } from "react-native";
 import { Title } from "react-native-paper";
 // SYSTEM -----------------------------------------------------------
 import { styles } from "../../theme/styles";
+import { googleLogo, facebookLogo } from "../../utils/logos";
 // COMPONENTS -------------------------------------------------------
-import GoogleLoginButton from "../molecules/GoogleLoginButton";
-import FacebookLoginButton from "../molecules/FacebookLoginButton";
+import LogoAvatar from "../atoms/LogoAvatar";
+// import GoogleLoginButton from "../molecules/GoogleLoginButton";
+// import FacebookLoginButton from "../molecules/FacebookLoginButton";
 import MidTruncatedText from "../atoms/MidTruncatedText";
 
 const AccountTypeIndicator = ({ userInfo }) => {
@@ -13,7 +15,7 @@ const AccountTypeIndicator = ({ userInfo }) => {
   // TODO: remove once in place
   const defaultInfo = {
     email: "hello_user@gmail.com",
-    accountType: "email",
+    accountType: "google",
     // accountType: "facebook",
     // accountType: "email",
   };
@@ -22,9 +24,9 @@ const AccountTypeIndicator = ({ userInfo }) => {
   const typeBadge = () => {
     switch (userInfo.accountType) {
       case "google":
-        return <GoogleLoginButton />;
+        return <LogoAvatar image={googleLogo} />;
       case "facebook":
-        return <FacebookLoginButton />;
+        return <LogoAvatar image={facebookLogo} />;
       default:
         return <MidTruncatedText>{userInfo.email}</MidTruncatedText>;
     }
@@ -35,7 +37,7 @@ const AccountTypeIndicator = ({ userInfo }) => {
       <View style={styles.fillContainer}>
         <Title>Logged in with:</Title>
       </View>
-      <View style={styles.fillContainer}>{typeBadge()}</View>
+      <View style={[styles.fillContainer, styles.centered]}>{typeBadge()}</View>
     </View>
   );
 };

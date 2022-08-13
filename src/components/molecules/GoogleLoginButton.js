@@ -2,10 +2,9 @@ import { useState } from "react";
 import useGoogleAuth from "../../hooks/useGoogleAuth";
 import AvatarCard from "../atoms/AvatarCard";
 import { styles } from "../../theme/styles";
+import { googleLogo } from "../../utils/logos";
 
 const GoogleAuthButton = ({ setUserInfo, text }) => {
-  const googleLogo = require("../../assets/images/google-logo.png");
-
   const { googleToken, getGoogleToken } = useGoogleAuth();
 
   const getUserGoogleData = async () => {

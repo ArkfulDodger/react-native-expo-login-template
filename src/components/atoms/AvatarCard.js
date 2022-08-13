@@ -1,16 +1,16 @@
 import { Card, Avatar, Text, TouchableRipple } from "react-native-paper";
 import { View } from "react-native";
 import { styles } from "../../theme/styles";
+import LogoAvatar from "../atoms/LogoAvatar";
 
 const AvatarCard = (props) => {
   return (
     <Card style={props.style} elevation={props.style.elevation || 1}>
       <TouchableRipple onPress={props.onPress}>
         <View style={styles.centeredRow}>
-          <Avatar.Image
+          <LogoAvatar
             size={props.size || props.textStyle.fontSize * 1.5}
-            style={styles.buttonAvatarImage}
-            source={props.image}
+            image={props.image}
           />
           {props.children && (
             <Text style={props.textStyle}>{props.children}</Text>
