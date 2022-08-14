@@ -1,13 +1,21 @@
-import AvatarCard from "../atoms/AvatarCard";
+// SYSTEM -----------------------------------------------------------
 import { styles } from "../../theme/styles";
 import { facebookLogoSimple as facebookLogo } from "../../utils/logos";
+// HOOKS ------------------------------------------------------------
+import useFacebookAuth from "../../hooks/useFacebookAuth";
+// COMPONENTS -------------------------------------------------------
+import AvatarCard from "../atoms/AvatarCard";
 
-const FacebookAuthButton = ({ text }) => {
-  const facebookLogo = require("../../assets/images/facebook-logo-simple.png");
+const FacebookAuthButton = ({ setUserInfo, text }) => {
+  const { facebookToken, getFacebookToken } = useFacebookAuth();
+
+  const getUserFacebookData = async () => {
+    console.log("getting user facebook data with token");
+  };
 
   return (
     <AvatarCard
-      onPress={() => console.log("log in with Facebook")}
+      onPress={() => getFacebookToken({ showInRecents: true })}
       image={facebookLogo}
       style={[styles.authButton, { backgroundColor: "#1977F3" }]}
       textStyle={{ ...styles.authButtonText, color: "white" }}

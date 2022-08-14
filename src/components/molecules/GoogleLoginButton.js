@@ -1,8 +1,10 @@
-import { useState } from "react";
-import useGoogleAuth from "../../hooks/useGoogleAuth";
-import AvatarCard from "../atoms/AvatarCard";
+// SYSTEM -----------------------------------------------------------
 import { styles } from "../../theme/styles";
 import { googleLogo } from "../../utils/logos";
+// HOOKS ------------------------------------------------------------
+import useGoogleAuth from "../../hooks/useGoogleAuth";
+// COMPONENTS -------------------------------------------------------
+import AvatarCard from "../atoms/AvatarCard";
 
 const GoogleAuthButton = ({ setUserInfo, text }) => {
   const { googleToken, getGoogleToken } = useGoogleAuth();
