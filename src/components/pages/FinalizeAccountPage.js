@@ -1,3 +1,4 @@
+import { useState } from "react";
 // REACT/EXPO -------------------------------------------------------
 import { View } from "react-native";
 // SYSTEM -----------------------------------------------------------
@@ -13,15 +14,23 @@ import FullNameForm from "../organisms/FullNameForm";
 import HorizontalLine from "../atoms/HorizontalLine";
 import ThemeSelector from "../organisms/ThemeSelector";
 
-const FinalizeAccountPage = ({ userInfo, setUserInfo }) => {
+const FinalizeAccountPage = ({
+  route: {
+    params: { userInfo },
+  },
+}) => {
+  const [accountInfo, setAccountInfo] = useState(userInfo);
+  console.log("FINALIZEPAGE ------------------");
+  console.log(accountInfo);
+
   return (
     <PageContainer>
       <View style={styles.spreadColumn}>
-        <AvatarEditable userInfo={userInfo} />
-        <DisplayNameEditable userInfo={userInfo} />
+        <AvatarEditable userInfo={accountInfo} />
+        <DisplayNameEditable userInfo={accountInfo} />
         <HorizontalLine />
-        <AccountTypeIndicator userInfo={userInfo} />
-        <FullNameForm userInfo={userInfo} />
+        <AccountTypeIndicator userInfo={accountInfo} />
+        <FullNameForm userInfo={accountInfo} />
         <HorizontalLine />
         <ThemeSelector />
         <AuthButton onPress={() => console.log("saved and logged in!")}>

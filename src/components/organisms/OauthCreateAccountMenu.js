@@ -4,11 +4,17 @@ import { styles } from "../../theme/styles";
 import GoogleLoginButton from "../molecules/GoogleLoginButton";
 import FacebookLoginButton from "../molecules/FacebookLoginButton";
 
-const OauthCreateAccountMenu = (props) => {
+const OauthCreateAccountMenu = ({ goToFinalizeAccount }) => {
   return (
     <View style={styles.spacedRow}>
-      <GoogleLoginButton />
-      <FacebookLoginButton />
+      <GoogleLoginButton
+        onRegistrationSuccess={goToFinalizeAccount}
+        isForRegistration={true}
+      />
+      <FacebookLoginButton
+        onRegistrationSuccess={goToFinalizeAccount}
+        isForRegistration={true}
+      />
     </View>
   );
 };

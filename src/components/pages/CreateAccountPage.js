@@ -13,8 +13,8 @@ import OauthCreateAccountMenu from "../organisms/OauthCreateAccountMenu";
 import TextButton from "../atoms/TextButton";
 
 const CreateAccountPage = ({ navigation }) => {
-  const goToFinalizeAccount = () => {
-    navigation.navigate("Finalize Account");
+  const goToFinalizeAccount = (userInfo) => {
+    navigation.navigate("Finalize Account", { userInfo: userInfo });
   };
 
   return (
@@ -23,7 +23,7 @@ const CreateAccountPage = ({ navigation }) => {
         <Headline>Create Account</Headline>
         <CreateAccountForm onSubmit={goToFinalizeAccount} />
         <HorizontalLine />
-        <OauthCreateAccountMenu />
+        <OauthCreateAccountMenu goToFinalizeAccount={goToFinalizeAccount} />
         <TextButton fontSize={20} onPress={() => navigation.navigate("Login")}>
           return to login
         </TextButton>

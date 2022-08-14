@@ -6,23 +6,16 @@ export default useFacebookAuth = () => {
   const [accessToken, setAccessToken] = useState();
 
   const [resquest, response, promptAsync] = Facebook.useAuthRequest({
-    expoClientId: "759303255342421",
-    androidClientId: "759303255342421",
-    iosClientId: "759303255342421",
-    clientId: "759303255342421",
-    responseType: ResponseType.Code,
+    expoClientId: "775773773769537",
+    androidClientId: "775773773769537",
+    iosClientId: "775773773769537",
+    clientId: "775773773769537",
   });
 
   // set access Token from successful FacebookAuthRequest
   useEffect(() => {
-    if (response) {
-      console.log("response: " + response.params);
-    }
     if (response?.type === "success") {
-      const { code } = response.params;
-      console.log("response params: " + response.params);
-      // setAccessToken(response.authentication.accessToken);
-      // console.log("token: " + response.authentication.accessToken);
+      setAccessToken(response.authentication.accessToken);
     }
   }, [response]);
 
