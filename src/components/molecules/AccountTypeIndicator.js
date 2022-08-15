@@ -10,25 +10,18 @@ import LogoAvatar from "../atoms/LogoAvatar";
 // import FacebookLoginButton from "../molecules/FacebookLoginButton";
 import MidTruncatedText from "../atoms/MidTruncatedText";
 
-const AccountTypeIndicator = ({ userInfo }) => {
-  // create default info for dev purposes
-  // TODO: remove once in place
-  const defaultInfo = {
-    email: "hello_user@gmail.com",
-    accountType: "google",
-    // accountType: "facebook",
-    // accountType: "email",
-  };
-  userInfo = userInfo || defaultInfo;
-
+const AccountTypeIndicator = ({ accountType }) => {
   const typeBadge = () => {
-    switch (userInfo.accountType) {
+    switch (accountType) {
       case "google":
         return <LogoAvatar image={googleLogo} />;
       case "facebook":
         return <LogoAvatar image={facebookLogo} />;
+      case "email":
+        return <Title>email</Title>;
       default:
-        return <MidTruncatedText>{userInfo.email}</MidTruncatedText>;
+        console.error("account type not parsed");
+        return null;
     }
   };
 

@@ -30,6 +30,7 @@ const GoogleAuthButton = ({
       firstName: data.given_name,
       lastName: data.family_name,
       isNamePrivate: false,
+      theme: "auto",
     };
     onRegistrationSuccess(userInfo);
   };

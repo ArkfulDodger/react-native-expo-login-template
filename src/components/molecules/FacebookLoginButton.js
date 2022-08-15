@@ -26,10 +26,11 @@ const FacebookAuthButton = ({
       picture: data.picture.data.url,
       username: data.first_name + data.last_name.charAt(0),
       accountType: "facebook",
-      email: null,
+      email: data.email,
       firstName: data.first_name,
       lastName: data.last_name,
       isNamePrivate: false,
+      theme: "auto",
     };
     onRegistrationSuccess(userInfo);
   };
@@ -40,7 +41,7 @@ const FacebookAuthButton = ({
 
   const getUserFacebookData = async () => {
     let userInfoResponse = await fetch(
-      `https://graph.facebook.com/me?access_token=${facebookToken}&fields=first_name,last_name,picture{url},id`
+      `https://graph.facebook.com/me?access_token=${facebookToken}&fields=first_name,last_name,picture{url},id,email`
     )
       .then((res) => res.json())
       .catch((error) => console.log(error.message));

@@ -3,46 +3,32 @@ import { View } from "react-native";
 import AuthInput from "../atoms/AuthInput";
 import CheckboxListItem from "../molecules/CheckboxListItem";
 
-const FullNameForm = ({ userInfo, setUserInfo }) => {
-  // create default info for dev purposes
-  // TODO: remove once in place
-  const defaultInfo = {
-    firstName: "Noah",
-    lastName: "Reece",
-    accountType: "google",
-    isNamePrivate: false,
-    // accountType: "facebook",
-    // accountType: "email",
-  };
-  userInfo = userInfo || defaultInfo;
-
-  // input state
-  const [firstInput, setFirstInput] = useState(userInfo.firstName || "");
-  const [lastInput, setLastInput] = useState(userInfo.lastName || "");
-  const [isNamePrivateInput, setIsNamePrivateInput] = useState(
-    userInfo.isNamePrivate || false
-  );
-  const [isEditable, setIsEditable] = useState(
-    userInfo.accountType === "email"
-  );
-
+const FullNameForm = ({
+  firstName,
+  lastName,
+  setFirstName,
+  setLastName,
+  isNamePrivate,
+  setIsNamePrivate,
+  isEditable,
+}) => {
   return (
     <View style={{ alignSelf: "stretch" }}>
       <AuthInput
         disabled={!isEditable}
         label="first"
-        value={firstInput}
-        onChangeText={(text) => setFirstInput(text)}
+        value={firstName}
+        onChangeText={(text) => setFirstName(text)}
       />
       <AuthInput
         disabled={!isEditable}
         label="last"
-        value={lastInput}
-        onChangeText={(text) => setLastInput(text)}
+        value={lastName}
+        onChangeText={(text) => setLastName(text)}
       />
       <CheckboxListItem
-        onPress={() => setIsNamePrivateInput((prev) => !prev)}
-        isChecked={!isNamePrivateInput}
+        onPress={() => setIsNamePrivate(!isNamePrivate)}
+        isChecked={!isNamePrivate}
         textChecked="friends can see your name"
         textUnchecked="only you can see your name"
       />

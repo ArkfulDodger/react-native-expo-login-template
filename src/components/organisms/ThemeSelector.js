@@ -8,10 +8,12 @@ import { ThemeContext } from "../../contexts/GlobalContexts";
 // COMPONENTS -------------------------------------------------------
 import SelectorRow from "../molecules/SelectorRow";
 
-const ThemeSelector = (props) => {
+const ThemeSelector = ({ themePreference, setThemePreference }) => {
   const setTheme = useContext(ThemeContext);
 
   const onChange = (newTheme) => {
+    setThemePreference(newTheme);
+
     switch (newTheme) {
       case "auto":
         setTheme(themes[useSystemTheme()]);

@@ -7,20 +7,16 @@ import { styles } from "../../theme/styles";
 import AuthInput from "../atoms/AuthInput";
 import ThinkingValidationIcon from "../molecules/ThinkingValidationIcon";
 
-const DisplayNameEditable = ({ userInfo }) => {
+const DisplayNameEditable = ({
+  username,
+  setUsername,
+  isUsernameAvailable: isAvailable,
+  setIsUsernameAvailable: setIsAvailable,
+}) => {
   //TODO: Add Helper Text for status indication
 
-  // create default info for dev purposes
-  // TODO: remove once in place
-  const defaultInfo = {
-    username: "NoahR",
-  };
-  userInfo = userInfo || defaultInfo;
-
   // input state
-  const [displayNameInput, setDisplayNameInput] = useState(userInfo.username);
   const [isThinking, setIsThinking] = useState(false);
-  const [isAvailable, setIsAvailable] = useState(true);
   const [nextCheckTimeoutId, setNextCheckTimeoutId] = useState();
   const [devLoadTimeoutId, setDevLoadTimeoutId] = useState();
 
@@ -34,13 +30,15 @@ const DisplayNameEditable = ({ userInfo }) => {
     setDevLoadTimeoutId(
       setTimeout(() => {
         setIsThinking(false);
+        setIsAvailable(true);
       }, 2000)
     );
   };
 
   const onChangeText = (text) => {
     setIsThinking(true);
-    setDisplayNameInput(text);
+    setIsAvailable(false);
+    setUsername(text);
 
     // verify the username if idle for 1.5 seconds
     clearTimeout(nextCheckTimeoutId);
@@ -56,7 +54,7 @@ const DisplayNameEditable = ({ userInfo }) => {
       <View style={styles.fillContainer}>
         <AuthInput
           label={"display name"}
-          value={displayNameInput}
+          value={username}
           onChangeText={onChangeText}
           onBlur={isThinking && verifyUsernameAvailability}
         />
