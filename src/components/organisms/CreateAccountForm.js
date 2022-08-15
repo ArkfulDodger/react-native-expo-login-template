@@ -38,6 +38,21 @@ const CreateAccountForm = ({ onSubmit }) => {
     });
   }, [isPasswordValid, isEmailValid]);
 
+  const attemptRegistration = () => {
+    const userInfo = {
+      picture: null,
+      username: "Worder027",
+      accountType: "email",
+      email: emailInput,
+      firstName: null,
+      lastName: null,
+      isNamePrivate: false,
+      theme: "auto",
+      avatarSelection: null,
+    };
+    onSubmit(userInfo);
+  };
+
   return (
     <>
       <View style={{ alignSelf: "stretch" }}>
@@ -64,7 +79,7 @@ const CreateAccountForm = ({ onSubmit }) => {
           confirmPasswordInput={confirmPasswordInput}
         />
       </View>
-      <AuthButton disabled={!isFormSubmittable} onPress={onSubmit}>
+      <AuthButton disabled={!isFormSubmittable} onPress={attemptRegistration}>
         submit
       </AuthButton>
     </>

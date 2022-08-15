@@ -31,6 +31,7 @@ const FacebookAuthButton = ({
       lastName: data.last_name,
       isNamePrivate: false,
       theme: "auto",
+      avatarSelection: null,
     };
     onRegistrationSuccess(userInfo);
   };

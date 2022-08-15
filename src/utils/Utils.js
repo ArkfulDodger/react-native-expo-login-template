@@ -62,3 +62,7 @@ export const updateBoolStateConditionally = ({
     setState(false);
   }
 };
+
+export const getRandomInt = (max) => {
+  return Math.floor(Math.random() * max);
+};

@@ -38,8 +38,13 @@ const FinalizeAccountPage = ({
     <PageContainer>
       <View style={styles.spreadColumn}>
         <AvatarEditable
+          firstName={userInfoToSave.firstName}
           avatarUrl={userInfoToSave.picture}
           setAvatarUrl={(value) => setUserInfoAttribute("picture", value)}
+          avatarSelection={userInfoToSave.avatarSelection}
+          setAvatarSelection={(value) =>
+            setUserInfoAttribute("avatarSelection", value)
+          }
         />
         <DisplayNameEditable
           username={userInfoToSave.username}

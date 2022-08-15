@@ -28,7 +28,7 @@ const AccountTypeIndicator = ({ accountType }) => {
   return (
     <View style={styles.spreadRow}>
       <View style={styles.fillContainer}>
-        <Title>Logged in with:</Title>
+        <Title>Signing up with:</Title>
       </View>
       <View style={[styles.fillContainer]}>{typeBadge()}</View>
     </View>
