@@ -10,7 +10,7 @@ const AvatarEditable = ({ userInfo }) => {
 
   return (
     <Pressable onPress={() => console.log("edit avatar!")}>
-      <Avatar.Image size={100} source={{ uri: userInfo.picture }} />
+      <Avatar.Image size={70} source={{ uri: userInfo.picture }} />
       <OffsetEditIcon size={24} />
     </Pressable>
   );

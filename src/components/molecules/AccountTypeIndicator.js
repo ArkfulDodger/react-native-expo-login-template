@@ -37,7 +37,7 @@ const AccountTypeIndicator = ({ userInfo }) => {
       <View style={styles.fillContainer}>
         <Title>Logged in with:</Title>
       </View>
-      <View style={[styles.fillContainer, styles.centered]}>{typeBadge()}</View>
+      <View style={[styles.fillContainer]}>{typeBadge()}</View>
     </View>
   );
 };

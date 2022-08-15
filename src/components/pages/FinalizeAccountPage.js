@@ -20,8 +20,6 @@ const FinalizeAccountPage = ({
   },
 }) => {
   const [accountInfo, setAccountInfo] = useState(userInfo);
-  console.log("FINALIZEPAGE ------------------");
-  console.log(accountInfo);
 
   return (
     <PageContainer>
