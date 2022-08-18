@@ -55,6 +55,7 @@ const DisplayNameEditable = ({
       <View style={styles.row}>
         <View style={styles.fillContainer}>
           <AuthInput
+            error={!isThinking && !isAvailable}
             label={"username"}
             value={username}
             onChangeText={onChangeText}
