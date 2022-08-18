@@ -1,6 +1,7 @@
 // REACT/EXPO -------------------------------------------------------
 import React, { useState, useEffect } from "react";
 import { View, ActivityIndicator } from "react-native";
+import { HelperText } from "react-native-paper";
 // SYSTEM -----------------------------------------------------------
 import { styles } from "../../theme/styles";
 // COMPONENTS -------------------------------------------------------
@@ -30,8 +31,8 @@ const DisplayNameEditable = ({
     setDevLoadTimeoutId(
       setTimeout(() => {
         setIsThinking(false);
-        setIsAvailable(true);
-      }, 2000)
+        setIsAvailable(false);
+      }, 100)
     );
   };
 
@@ -50,16 +51,25 @@ const DisplayNameEditable = ({
   };
 
   return (
-    <View style={styles.row}>
-      <View style={styles.fillContainer}>
-        <AuthInput
-          label={"display name"}
-          value={username}
-          onChangeText={onChangeText}
-          onBlur={isThinking && verifyUsernameAvailability}
-        />
+    <View style={{ alignSelf: "stretch" }}>
+      <View style={styles.row}>
+        <View style={styles.fillContainer}>
+          <AuthInput
+            label={"username"}
+            value={username}
+            onChangeText={onChangeText}
+            onBlur={isThinking && verifyUsernameAvailability}
+          />
+        </View>
+        <ThinkingValidationIcon isValid={isAvailable} isThinking={isThinking} />
       </View>
-      <ThinkingValidationIcon isValid={isAvailable} isThinking={isThinking} />
+      <HelperText type={isThinking || isAvailable ? "info" : "error"}>
+        {isThinking
+          ? "checking availability"
+          : isAvailable
+          ? "username is available!"
+          : "username is not available!"}
+      </HelperText>
     </View>
   );
 };
