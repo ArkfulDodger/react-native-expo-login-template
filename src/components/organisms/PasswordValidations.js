@@ -11,6 +11,8 @@ import PasswordMatchValidation from "../molecules/PasswordMatchValidation";
 const PasswordValidations = ({
   isPasswordValid,
   setIsPasswordValid,
+  isConfirmationValid,
+  setIsConfirmationValid,
   passwordInput,
   confirmPasswordInput,
 }) => {
@@ -25,13 +27,17 @@ const PasswordValidations = ({
     updateBoolStateConditionally({
       state: isPasswordValid,
       setter: setIsPasswordValid,
-      conditions: [
-        isLengthValid,
-        isAlphaNumericalityValid,
-        isConfirmPasswordMatch,
-      ],
+      conditions: [isLengthValid, isAlphaNumericalityValid],
     });
-  }, [isLengthValid, isAlphaNumericalityValid, isConfirmPasswordMatch]);
+  }, [isLengthValid, isAlphaNumericalityValid]);
+
+  useEffect(() => {
+    updateBoolStateConditionally({
+      state: isConfirmationValid,
+      setter: setIsConfirmationValid,
+      conditions: [isConfirmPasswordMatch],
+    });
+  }, [isConfirmPasswordMatch]);
 
   return (
     <View>

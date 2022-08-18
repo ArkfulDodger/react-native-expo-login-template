@@ -18,6 +18,7 @@ const CreateAccountForm = ({ onSubmit }) => {
   // Validation States
   const [isEmailValid, setIsEmailValid] = useState(false);
   const [isPasswordValid, setIsPasswordValid] = useState(false);
+  const [isConfirmationValid, setIsConfirmationValid] = useState(false);
   const [isFormSubmittable, setIsFormSubmittable] = useState(false);
 
   // check/update email validation when email is edited
@@ -34,9 +35,9 @@ const CreateAccountForm = ({ onSubmit }) => {
     updateBoolStateConditionally({
       state: isFormSubmittable,
       setter: setIsFormSubmittable,
-      conditions: [isPasswordValid, isEmailValid],
+      conditions: [isPasswordValid, isConfirmationValid, isEmailValid],
     });
-  }, [isPasswordValid, isEmailValid]);
+  }, [isPasswordValid, isConfirmationValid, isEmailValid]);
 
   const attemptRegistration = () => {
     const userInfo = {
@@ -59,15 +60,18 @@ const CreateAccountForm = ({ onSubmit }) => {
         <AuthInput
           label="email"
           value={emailInput}
+          isErrorMarked
           error={emailInput !== "" && !isEmailValid}
           onChangeText={(text) => setEmailInput(text)}
         />
         <SecureInput
+          error={passwordInput && !isPasswordValid}
           label="password"
           value={passwordInput}
           onChangeText={(text) => setPasswordInput(text)}
         />
         <SecureInput
+          error={confirmPasswordInput && !isConfirmationValid}
           label="confirm password"
           value={confirmPasswordInput}
           onChangeText={(text) => setConfirmPasswordInput(text)}
@@ -75,6 +79,8 @@ const CreateAccountForm = ({ onSubmit }) => {
         <PasswordValidations
           isPasswordValid={isPasswordValid}
           setIsPasswordValid={setIsPasswordValid}
+          isConfirmationValid={isConfirmationValid}
+          setIsConfirmationValid={setIsConfirmationValid}
           passwordInput={passwordInput}
           confirmPasswordInput={confirmPasswordInput}
         />
