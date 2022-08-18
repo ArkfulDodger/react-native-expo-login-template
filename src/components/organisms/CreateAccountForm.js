@@ -58,6 +58,7 @@ const CreateAccountForm = ({ onSubmit }) => {
     <>
       <View style={{ alignSelf: "stretch" }}>
         <AuthInput
+          keyboardType="email-address"
           label="email"
           value={emailInput}
           isErrorMarked

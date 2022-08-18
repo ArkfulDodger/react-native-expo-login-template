@@ -14,6 +14,7 @@ const LoginForm = (props) => {
     <>
       <View style={{ alignSelf: "stretch" }}>
         <AuthInput
+          keyboardType="email-address"
           label="email"
           value={emailInput}
           onChangeText={(text) => setEmailInput(text)}

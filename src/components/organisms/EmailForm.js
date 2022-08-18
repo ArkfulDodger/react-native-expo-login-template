@@ -2,9 +2,10 @@ import { useState } from "react";
 import AuthInput from "../atoms/AuthInput";
 import { convertToPrivateEmail } from "../../utils/utils";
 
-const FullNameForm = ({ emailInput, setEmailInput, isEditable }) => {
+const EmailForm = ({ emailInput, setEmailInput, isEditable }) => {
   return (
     <AuthInput
+      keyboardType="email-address"
       disabled={!isEditable}
       label="email"
       value={!isEditable ? convertToPrivateEmail(emailInput) : emailInput}
@@ -13,4 +14,4 @@ const FullNameForm = ({ emailInput, setEmailInput, isEditable }) => {
   );
 };
 
-export default FullNameForm;
+export default EmailForm;

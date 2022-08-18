@@ -32,6 +32,7 @@ const AuthInput = (props) => {
           props.right
         )
       }
+      autoCapitalize="none"
       error={isFocused ? false : props.error}
       mode="outlined"
       style={[styles.authInput, { backgroundColor: colors.backgroundLight }]}
