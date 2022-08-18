@@ -16,13 +16,13 @@ const FullNameForm = ({
     <View style={{ alignSelf: "stretch" }}>
       <AuthInput
         disabled={!isEditable}
-        label="first"
+        label="first name"
         value={firstName}
         onChangeText={(text) => setFirstName(text)}
       />
       <AuthInput
         disabled={!isEditable}
-        label="last"
+        label="last name"
         value={lastName}
         onChangeText={(text) => setLastName(text)}
       />
