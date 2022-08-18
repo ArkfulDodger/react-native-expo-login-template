@@ -66,3 +66,15 @@ export const updateBoolStateConditionally = ({
 export const getRandomInt = (max) => {
   return Math.floor(Math.random() * max);
 };
+
+export const convertToPrivateEmail = (email) => {
+  let i = email.indexOf("@");
+  if (i === -1) {
+    console.warn("tried to convert non-email string to private email");
+    return email;
+  } else {
+    return (
+      email.charAt(0) + email.slice(1, i).replace(/./g, "*") + email.slice(i)
+    );
+  }
+};
