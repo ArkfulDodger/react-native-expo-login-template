@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Platform } from "react-native";
 import useFadeSlide from "../hooks/useFadeSlide";
 import fonts from "./fonts";
 
@@ -83,6 +83,13 @@ export const styles = StyleSheet.create({
     padding: 3,
     marginVertical: 10,
     elevation: 6,
+  },
+
+  // auth page buttons
+  authButtonDisabled: {
+    alignSelf: "stretch",
+    padding: 3,
+    marginVertical: 10,
   },
 
   // auth page button text

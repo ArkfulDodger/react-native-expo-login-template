@@ -9,7 +9,7 @@ const AuthButton = (props) => {
       {...props}
       mode="contained"
       uppercase={false}
-      style={styles.authButton}
+      style={props.disabled ? styles.authButtonDisabled : styles.authButton}
       labelStyle={styles.authButtonText}
       theme={{ colors: { primary: colors.submit } }}
     >
