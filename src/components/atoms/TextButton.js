@@ -3,11 +3,10 @@ import { styles } from "../../theme/styles";
 import fonts from "../../theme/fonts";
 
 const TextButton = (props) => {
+  // override font size if passed as a prop
   const textStyle = props.fontSize
     ? [styles.textButtonText, { fontSize: fonts.size["font" + props.fontSize] }]
     : styles.textButtonText;
-
-  // console.log(textStyle);
 
   return (
     <Button
