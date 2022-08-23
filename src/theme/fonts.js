@@ -1,4 +1,3 @@
-import { Platform } from "react-native";
 import metrics from "./metrics";
 
 // require all custom fonts
@@ -17,7 +16,6 @@ const custom = {
 
 // set fonts family to use for specified purpose
 const type = {
-  // default: Platform.OS === "ios" ? "System" : "Roboto",
   defaultBold: "Ubuntu-Bold",
   defaultMedium: "Ubuntu-Medium",
   default: "Ubuntu-Regular",

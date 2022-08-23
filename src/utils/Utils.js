@@ -1,7 +1,6 @@
 import { Platform, StatusBar } from "react-native";
 
 // performs configuration work specific to different platforms
-// for use on startup
 export const configurePlatformSpecificSettings = () => {
   if (Platform.OS === "android") {
   }
@@ -11,6 +10,7 @@ export const configurePlatformSpecificSettings = () => {
 };
 
 export const configureThemeSettings = (isDark) => {
+  // sets status bar content based on dark/light theme
   StatusBar.setBarStyle(isDark ? "light-content" : "dark-content");
   return;
 };

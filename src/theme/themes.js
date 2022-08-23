@@ -79,7 +79,7 @@ const universalSettings = {
       fontFamily: fonts.type.default,
     },
   },
-  // animation
+  // animation: not yet defined or changed from default
 };
 
 const lightTheme = {
