@@ -1,5 +1,4 @@
 // REACT/EXPO -------------------------------------------------------
-import { useState } from "react";
 import * as WebBrowser from "expo-web-browser";
 // CONTAINERS -------------------------------------------------------
 import KeyboardAvoidingView from "../containers/KeyboardAvoidingView";
@@ -11,8 +10,6 @@ import AuthStack from "../navigation/AuthStack";
 WebBrowser.maybeCompleteAuthSession();
 
 const AuthScreen = (props) => {
-  const [userInfo, setUserInfo] = useState(null);
-
   return (
     <KeyboardAvoidingView>
       <TitleImage />

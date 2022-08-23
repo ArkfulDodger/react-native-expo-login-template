@@ -1,7 +1,7 @@
 // REACT/EXPO -------------------------------------------------------
 import { View } from "react-native";
 // EXTERNAL ---------------------------------------------------------
-import { Headline, Button } from "react-native-paper";
+import { Headline } from "react-native-paper";
 // SYSTEM -----------------------------------------------------------
 import { styles } from "../../theme/styles";
 // CONTAINERS -------------------------------------------------------
@@ -11,17 +11,19 @@ import FacebookLoginButton from "../molecules/FacebookLoginButton";
 import GoogleLoginButton from "../molecules/GoogleLoginButton";
 import HorizontalLine from "../atoms/HorizontalLine";
 import LoginForm from "../organisms/LoginForm";
-import UserInfoDisplay from "../molecules/UserInfoDisplay";
 import TextButton from "../atoms/TextButton";
+import UserInfoDisplay from "../molecules/UserInfoDisplay";
 
 const LoginPage = ({ userInfo, setUserInfo, navigation }) => {
+  // TODO: handle forgot passoword button behavior
+
   return (
     <PageContainer>
       <View style={styles.spreadColumn}>
         <Headline>Log In</Headline>
         <LoginForm />
         <HorizontalLine />
-        <GoogleLoginButton setUserInfo={setUserInfo} text="log in" />
+        <GoogleLoginButton text="log in" />
         <FacebookLoginButton text="log in" />
         <View>
           <TextButton

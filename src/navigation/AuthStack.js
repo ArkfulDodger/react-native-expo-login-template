@@ -1,6 +1,3 @@
-// REACT/EXPO -------------------------------------------------------
-import React, { useState, useEffect } from "react";
-import { View } from "react-native";
 // EXTERNAL ---------------------------------------------------------
 import { createStackNavigator } from "@react-navigation/stack";
 // SYSTEM -----------------------------------------------------------
