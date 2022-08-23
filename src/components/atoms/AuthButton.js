@@ -11,7 +11,7 @@ const AuthButton = (props) => {
       uppercase={false}
       style={props.disabled ? styles.authButtonDisabled : styles.authButton}
       labelStyle={styles.authButtonText}
-      theme={{ colors: { primary: colors.submit } }}
+      theme={{ colors: { primary: colors.focus } }}
     >
       {props.children}
     </Button>

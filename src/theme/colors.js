@@ -57,7 +57,7 @@ const lightMain = {
   backgroundLight: "#fff6f2", // slightly lighter than midway
   primary: "#8F5D00",
   secondary: "#FAC336",
-  submit: "#BC02D9",
+  focus: "#BC02D9",
   accent: "#00ACB7",
 };
 
@@ -66,6 +66,7 @@ const lightGradients = {
   backgroundGradient: [lightMain.backgroundStart, lightMain.backroundEnd],
 };
 
+// dark theme color palette
 const darkMain = {
   background: "transparent",
   backgroundStart: "#0a063b",
@@ -74,15 +75,15 @@ const darkMain = {
   backgroundLight: "#0d0a36", // slightly lighter than midway
   primary: "#7c75ff",
   secondary: "#5943D8",
-  submit: "#C50EE1",
+  focus: "#C50EE1",
   accent: "#00ACB7",
 };
 
+// dark theme color gradients
 const darkGradients = {
   backgroundGradient: [darkMain.backgroundStart, darkMain.backroundEnd],
 };
 
-// TODO: set theme to dark if device or app is set to dark theme
 export const colors = {
   light: { ...CombinedDefaultTheme.colors, ...lightMain, ...lightGradients },
   dark: { ...CombinedDarkTheme.colors, ...darkMain, ...darkGradients },

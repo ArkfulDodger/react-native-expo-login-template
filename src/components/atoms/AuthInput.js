@@ -40,7 +40,7 @@ const AuthInput = (props) => {
       onBlur={onBlur}
       onFocus={onFocus}
       textContentType="oneTimeCode" // ensures password fields not covered in iOS
-      theme={{ colors: { primary: colors.submit } }}
+      theme={{ colors: { primary: colors.focus } }}
     />
   );
 };
