@@ -1,5 +1,5 @@
 // REACT/EXPO -------------------------------------------------------
-import React, { useState } from "react";
+import { useState } from "react";
 import { View } from "react-native";
 // COMPONENTS -------------------------------------------------------
 import AuthButton from "../atoms/AuthButton";
