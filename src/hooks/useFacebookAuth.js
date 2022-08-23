@@ -19,5 +19,5 @@ export default useFacebookAuth = () => {
     }
   }, [response]);
 
-  return { facebookToken: accessToken, getFacebookToken: promptAsync };
+  return [accessToken, promptAsync];
 };

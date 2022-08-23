@@ -20,5 +20,5 @@ export default useGoogleAuth = () => {
     }
   }, [response]);
 
-  return { googleToken: accessToken, getGoogleToken: promptAsync };
+  return [accessToken, promptAsync];
 };

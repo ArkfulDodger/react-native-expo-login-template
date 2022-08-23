@@ -1,28 +1,24 @@
-import { useEffect, useCallback } from "react";
 // SYSTEM -----------------------------------------------------------
 import { styles } from "../../theme/styles";
 import { facebookLogoSimple as facebookLogo } from "../../utils/logos";
 // HOOKS ------------------------------------------------------------
 import useFacebookAuth from "../../hooks/useFacebookAuth";
 // COMPONENTS -------------------------------------------------------
-import AvatarCard from "../atoms/AvatarCard";
+import OAuthButton from "../molecules/OAuthButton";
 
 const FacebookAuthButton = ({
   text,
   onRegistrationSuccess,
   isForRegistration = false,
 }) => {
-  const { facebookToken, getFacebookToken } = useFacebookAuth();
+  const fetchFacebookData = async (token) => {
+    return fetch(
+      `https://graph.facebook.com/me?access_token=${token}&fields=first_name,last_name,picture{url},id,email`
+    );
+  };
 
-  useEffect(() => {
-    if (facebookToken) {
-      isForRegistration ? attemptRegistration() : attemptLogin();
-    }
-  }, [facebookToken]);
-
-  const attemptRegistration = async () => {
-    const data = await getUserFacebookData();
-    const userInfo = {
+  const convertFacebookDataToInfo = (data) => {
+    return {
       picture: data.picture.data.url,
       username: data.first_name + data.last_name.charAt(0),
       accountType: "facebook",
@@ -33,32 +29,20 @@ const FacebookAuthButton = ({
       theme: "auto",
       avatarSelection: null,
     };
-    onRegistrationSuccess(userInfo);
-  };
-
-  const attemptLogin = () => {
-    console.log("attempting login with token");
-  };
-
-  const getUserFacebookData = async () => {
-    let userInfoResponse = await fetch(
-      `https://graph.facebook.com/me?access_token=${facebookToken}&fields=first_name,last_name,picture{url},id,email`
-    )
-      .then((res) => res.json())
-      .catch((error) => console.log(error.message));
-
-    return userInfoResponse;
   };
 
   return (
-    <AvatarCard
-      onPress={() => getFacebookToken({ showInRecents: true })}
-      image={facebookLogo}
-      style={[styles.authButton, { backgroundColor: "#1977F3" }]}
+    <OAuthButton
+      text={text}
+      onRegistrationSuccess={onRegistrationSuccess}
+      isForRegistration={isForRegistration}
+      logo={facebookLogo}
+      useAuthToken={useFacebookAuth}
+      fetchData={fetchFacebookData}
+      convertUserDataToInfo={convertFacebookDataToInfo}
+      buttonStyle={[styles.authButton, { backgroundColor: "#1977F3" }]}
       textStyle={{ ...styles.authButtonText, color: "white" }}
-    >
-      {text}
-    </AvatarCard>
+    />
   );
 };
 
