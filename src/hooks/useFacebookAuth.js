@@ -6,10 +6,10 @@ export default useFacebookAuth = () => {
   const [accessToken, setAccessToken] = useState();
 
   const [resquest, response, promptAsync] = Facebook.useAuthRequest({
-    expoClientId: "775773773769537",
-    androidClientId: "775773773769537",
-    iosClientId: "775773773769537",
-    clientId: "775773773769537",
+    expoClientId: "yourClientIdHere",
+    androidClientId: "yourClientIdHere",
+    iosClientId: "yourClientIdHere",
+    clientId: "yourClientIdHere",
   });
 
   // set access Token from successful FacebookAuthRequest

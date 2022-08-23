@@ -12,7 +12,7 @@ WebBrowser.maybeCompleteAuthSession();
 const AuthScreen = (props) => {
   return (
     <KeyboardAvoidingView>
-      <TitleImage />
+      {/* <TitleImage /> */}
       <AuthStack />
     </KeyboardAvoidingView>
   );

@@ -11,7 +11,7 @@ import CenteredContainer from "../containers/CenteredContainer";
 const LoadingScreen = (props) => {
   return (
     <CenteredContainer>
-      <Text style={{ fontFamily: fonts.type.titleDefault }}>WORDERBY</Text>
+      <Text style={{ fontFamily: fonts.type.titleDefault }}>APP NAME</Text>
       <ActivityIndicator />
     </CenteredContainer>
   );
