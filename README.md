@@ -12,36 +12,33 @@ This template can be used as a jumping off point for creating a new React Native
 
 ## Navigation
 
-<div style="display:flex; flex-flow:row;">
-	<div style="display:flex; justify-content:center; min-width: 200px">
-		<img width="300" src="./img/RNET_Navigation.gif">
-	</div>
+<div style="display:flex; flex-flow:column;">
 	<ul style="min-width:200px;">
 		<li>Uses <a href="https://reactnavigation.org/">React Navigation</a> to navigate seamlessly between screens with swipe-fade animation</li>
 		<li>By default, title image remains stationary while navigating between authentication screens</li>
 	</ul>
+	<div style="display:flex; justify-content:center; min-width: 200px">
+		<img width="300" src="./img/RNET_Navigation.gif">
+	</div>
 </div>
 
 ## Validations
 
-<div style="display:flex; flex-flow:row;">
-	<div style="display:flex; justify-content:center; min-width: 200px">
-		<img width="300" src="./img/RNET_Validations.gif">
-	</div>
+<div style="display:flex; flex-flow:column;">
 	<ul style="min-width:200px">
 		<li>Create Account form cannot be submitted until all validations are met</li>
 		<li>Email field will flag an error for non-email inputs</li>
 		<li>All password validations reflect status to the user as they type</li>
 		<li>Password Fields can each independently toggle visibility</li>
 	</ul>
+	<div style="display:flex; justify-content:center; min-width: 200px">
+		<img width="300" src="./img/RNET_Validations.gif">
+	</div>
 </div>
 
 ## Optional Finalization
 
-<div style="display:flex; flex-flow:row;">
-	<div style="display:flex; justify-content:center; min-width: 200px">
-		<img width="300" src="./img/RNET_Finalize.gif">
-	</div>
+<div style="display:flex; flex-flow:column;">
 	<ul style="min-width:200px">
 		<li>Can navigate to optional Finalize Account screen on succesful account creation</li>
 		<li>Allows user to edit: Avatar, Username, Name Visibility, and Theme</li>
@@ -49,11 +46,14 @@ This template can be used as a jumping off point for creating a new React Native
 		<li>First/Last name fields are not editable if signing up with OAuth provider</li>
 		<li>"auto" theme selection can detect phone system dark-mode settings</li>
 	</ul>
+	<div style="display:flex; justify-content:center; min-width: 200px">
+		<img width="300" src="./img/RNET_Finalize.gif">
+	</div>
 </div>
 
 # Included Screens & Screenshots
 
-<div style="display:flex; flex-flow: row-reverse wrap-reverse; align-items: center; justify-content:center">
+<div style="display:flex; flex-flow: column-reverse wrap-reverse; align-items: center; justify-content:center">
 		<div style="display:flex; flex-direction:column; justify-content:center; width: 100%; max-width: 410px;">
 		<div>
 			<h2 style="text-align:center">Finalize Account Screen</h2>
