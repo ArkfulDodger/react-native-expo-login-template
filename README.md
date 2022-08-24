@@ -59,8 +59,8 @@ This template can be used as a jumping off point for creating a new React Native
 			<h2 style="text-align:center">Finalize Account Screen</h2>
 		</div>
 		<div style="display:flex; justify-content:center;">
-			<img width="200" src="./img/FinalizeLight.png">
-			<img width="200" src="./img/FinalizeDark.png">
+			<img width="40%" src="./img/FinalizeLight.png">
+			<img width="40%" src="./img/FinalizeDark.png">
 		</div>
 	</div>
 	<div style="display:flex; flex-direction:column; justify-content:center; width: 100%; max-width: 410px;">
@@ -68,8 +68,8 @@ This template can be used as a jumping off point for creating a new React Native
 			<h2 style="text-align:center">Create Account Screen</h2>
 		</div>
 		<div style="display:flex; justify-content:center;">
-			<img width="200" src="./img/CreateLight.png">
-			<img width="200" src="./img/CreateDark.png">
+			<img width="40%" src="./img/CreateLight.png">
+			<img width="40%" src="./img/CreateDark.png">
 		</div>
 	</div>
 	<div style="display:flex; flex-direction:column; justify-content:center; width: 100%; max-width: 410px;">
@@ -77,8 +77,8 @@ This template can be used as a jumping off point for creating a new React Native
 			<h2 style="text-align:center">Login Screen</h2>
 		</div>
 		<div style="display:flex; justify-content:center;">
-			<img width="200" src="./img/LogInLight.png">
-			<img width="200" src="./img/LogInDark.png">
+			<img width="40%" src="./img/LogInLight.png">
+			<img width="40%" src="./img/LogInDark.png">
 		</div>
 	</div>
 </div>
