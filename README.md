@@ -1,25 +1,19 @@
 # react-native-expo-login-template
-A template for the front-end login and create account screens for a React Native mobile app for iOS and Android using an Expo Managed build
 
-This template can be used as a jumping off point for creating a new React Native mobile app with an Expo Managed build. It features the following:
+This template can be used as a jumping off point for creating a new React Native mobile app with an Expo Managed build. It integrates the use of the [React Native Paper](https://reactnativepaper.com/) and [React Navigation](https://reactnavigation.org/) libraries for UI/UX in addition to custom components.
 
-# Screens
-- Splash screen on startup
-- Login Screen
-- Create Account Screen
-- (optional) Finalize Account Screen
 
-# Integrated Libraries
-- React Native Paper
-- React Navigation
+## Main Features:
 
-# OAuth
-- Google and Facebook OAuth UI is prepared
-- simple need to use the client IDs for your own app
-
+- Log In or Sign Up with email or OAuth (Google & Facebook)
+- Supports custom fonts and themes, including dark/light modes (customizable)
+- Client-Side email/password validations during account creation
+- Visual input error feedback, including deactivated submit buttons until requirements are met
+- Optional Finalize-Account screen to set key user settings before initial log-in
 
 
 # Setup
+## note: setup instructions are in process of being written at this time and may be incomplete
 
 In app.json:
  - set "name" and "slug" to your <app name>
