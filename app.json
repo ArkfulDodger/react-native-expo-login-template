@@ -7,9 +7,9 @@
         "icon": "./src/assets/images/icon.png",
         "userInterfaceStyle": "automatic",
         "splash": {
-            "image": "./src/assets/images/splash.png",
+            "image": "./src/assets/images/demo-splash.png",
             "resizeMode": "contain",
-            "backgroundColor": "#FFFFFF"
+            "backgroundColor": "#FFDABB"
         },
         "updates": {
             "fallbackToCacheTimeout": 0
@@ -22,7 +22,7 @@
         "android": {
             "adaptiveIcon": {
                 "foregroundImage": "./src/assets/images/adaptive-icon.png",
-                "backgroundColor": "#FFFFFF"
+                "backgroundColor": "#FFDABB"
             },
             "package": "com.username.app"
         },

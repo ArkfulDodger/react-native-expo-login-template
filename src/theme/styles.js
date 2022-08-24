@@ -91,7 +91,9 @@ export const styles = StyleSheet.create({
 
   // styling for title image implementations
   titleImage: {
-    marginVertical: 40,
+    alignSelf: "center",
+    marginVertical: 20,
+    width: "100%",
   },
 
   buttonAvatarImage: {

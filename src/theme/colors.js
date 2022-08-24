@@ -51,13 +51,12 @@ const { CombinedDefaultTheme, CombinedDarkTheme } = useCombinedThemes();
 // light theme color palette
 const lightMain = {
   background: "transparent",
-  backgroundStart: "#FFFFFF",
-  backroundEnd: "#FFE2CD",
-  backgroundMid: "#FFF0E6", // midway btw gradient top/bottom
-  backgroundLight: "#fff6f2", // slightly lighter than midway
-  primary: "#8F5D00",
-  secondary: "#FAC336",
-  focus: "#BC02D9",
+  backgroundStart: "#fff0c2",
+  backroundEnd: "#ffc4b4",
+  backgroundMid: "#FFDABB", // midway btw gradient top/bottom
+  backgroundLight: "#FFE5BF", // slightly lighter than midway
+  primary: "#720b00",
+  focus: "#ce7100ff",
   accent: "#00ACB7",
 };
 
@@ -69,13 +68,12 @@ const lightGradients = {
 // dark theme color palette
 const darkMain = {
   background: "transparent",
-  backgroundStart: "#0a063b",
+  backgroundStart: "#230543",
   backroundEnd: "#000000",
   backgroundMid: "#05031e", // midway btw gradient top/bottom
   backgroundLight: "#0d0a36", // slightly lighter than midway
-  primary: "#7c75ff",
-  secondary: "#5943D8",
-  focus: "#C50EE1",
+  primary: "#c39eff",
+  focus: "#ffad48ff",
   accent: "#00ACB7",
 };
 
