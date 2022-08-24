@@ -53,14 +53,14 @@ This template can be used as a jumping off point for creating a new React Native
 
 # Included Screens & Screenshots
 
-<div style="display:flex; flex-flow: column-reverse wrap-reverse; align-items: center; justify-content:center">
-		<div style="display:flex; flex-direction:column; justify-content:center; width: 100%; max-width: 410px;">
+<div style="display:flex; flex-flow: column; align-items: center; justify-content:center">
+	<div style="display:flex; flex-direction:column; justify-content:center; width: 100%; max-width: 410px;">
 		<div>
-			<h2 style="text-align:center">Finalize Account Screen</h2>
+			<h2 style="text-align:center">Login Screen</h2>
 		</div>
 		<div style="display:flex; justify-content:center;">
-			<img width="40%" src="./img/FinalizeLight.png">
-			<img width="40%" src="./img/FinalizeDark.png">
+			<img width="40%" src="./img/LogInLight.png">
+			<img width="40%" src="./img/LogInDark.png">
 		</div>
 	</div>
 	<div style="display:flex; flex-direction:column; justify-content:center; width: 100%; max-width: 410px;">
@@ -74,11 +74,11 @@ This template can be used as a jumping off point for creating a new React Native
 	</div>
 	<div style="display:flex; flex-direction:column; justify-content:center; width: 100%; max-width: 410px;">
 		<div>
-			<h2 style="text-align:center">Login Screen</h2>
+			<h2 style="text-align:center">Finalize Account Screen</h2>
 		</div>
 		<div style="display:flex; justify-content:center;">
-			<img width="40%" src="./img/LogInLight.png">
-			<img width="40%" src="./img/LogInDark.png">
+			<img width="40%" src="./img/FinalizeLight.png">
+			<img width="40%" src="./img/FinalizeDark.png">
 		</div>
 	</div>
 </div>
